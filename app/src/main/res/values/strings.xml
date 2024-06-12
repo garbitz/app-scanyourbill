@@ -5,4 +5,25 @@
     <string name="add_new_wal">Add New Wallet</string>
     <string name="account_nam">Account Name</string>
     <string name="save_wall">Save Wallet</string>
+    <string name="add_new_trans">Add Transaction</string>
+    <string name="save_trans">Save Activity</string>
+    <string name="amount">Amount</string>
+    <string name="category">Select Category</string>
+    <string name="date">Today</string>
+    <string name="wallet">Tunai</string>
+    <string name="notes">Notes</string>
+    <string name="icon">Icon</string>
+    <string name="search">Search</string>
+    <string name="act_type">Type</string>
+    <string name="clear">Clear</string>
+    <string name="dtl_type">Type</string>
+    <string name="dtl_wallet">Account</string>
+    <string name="dtl_amount">Amount</string>
+    <string name="dtl_date">Date</string>
+    <string name="dtl_note">Note</string>
+    <string name="dtl_category">Category</string>
+    <string name="account">Account</string>
+    <string name="detail">Detail</string>
+
+
 </resources>
