@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title=""
+        android:icon="@drawable/ic_home_selected"/>
+    <item
+        android:id="@+id/transaksi"
+        android:title=""
+        android:icon="@drawable/ic_transaksi_selected"/>
+    <item
+        android:id="@+id/scan"
+        android:title=""
+        android:icon="@mipmap/ic_launcher_round"/>
+    <item
+        android:id="@+id/budget"
+        android:title=""
+        android:icon="@drawable/ic_budget"/>
+    <item
+        android:id="@+id/account"
+        android:title=""
+        android:icon="@drawable/ic_akun"/>
+</menu>
