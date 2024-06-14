@@ -25,6 +25,18 @@
     <string name="account">Account</string>
     <string name="detail">Detail</string>
     <string name="username">Username</string>
+    <string name="welcome_text">Selamat Datang Kembali</string>
+    <string name="project_title">ScanYourBill</string>
+    <string name="insert_username">Masukkan username kamu dibawah ya!</string>
+    <string name="next">Lanjutkan</string>
+    <string name="welcome_first">Selamat Datang</string>
+    <string name="insert_pin_label">Buat 6 Digit PIN Kamu</string>
+    <string name="kode_pin">Kode PIN</string>
+    <string name="hint_pin">PIN harus berjumlah 6 angka secara acak dan tidak boleh sama seperti: 000000, 111111, 999999 dan yang berurutan seperti: 123456, 234567, 654321</string>
+    <string name="insert_pin_login">Masukkan PIN Kamu</string>
+    <string name="insert_your_pin">Masukkan PIN Kamu</string>
+    <string name="forget_label">Kamu Lupa PIN?</string>
+    <string name="forget_btn">Reset PIN Disini</string>
 
 
 </resources>
