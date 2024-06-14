@@ -115,7 +115,7 @@
                             android:id="@+id/rxmvujxc2svq"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/sff6c7988sw1cr2"
+
                             android:paddingVertical="2dp"
                             android:layout_marginBottom="18dp"
                             android:orientation="vertical">
@@ -123,7 +123,7 @@
                                 android:id="@+id/rji910b80oc"
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
-                                android:background="@drawable/cr3"
+
                                 android:layout_marginBottom="3dp"
                                 android:orientation="vertical">
                             </LinearLayout>
@@ -131,7 +131,7 @@
                                 android:id="@+id/r557byux0lq7"
                                 android:layout_width="2dp"
                                 android:layout_height="1dp"
-                                android:background="@drawable/cr3"
+
                                 android:layout_marginHorizontal="3dp"
                                 android:orientation="vertical">
                             </LinearLayout>
@@ -140,7 +140,7 @@
                             android:id="@+id/r2mrdhuqrtun"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/sff6c7988sw1cr1"
+
                             android:paddingHorizontal="3dp"
                             android:layout_marginHorizontal="2dp"
                             android:orientation="vertical">
@@ -148,7 +148,7 @@
                                 android:id="@+id/rssdlpbsmk5q"
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
-                                android:background="@drawable/cr1"
+
                                 android:layout_marginTop="13dp"
                                 android:orientation="vertical">
                             </LinearLayout>
@@ -184,7 +184,7 @@
                         android:layout_width="106dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:background="@drawable/cr42bff48ae63"
+
                         android:paddingVertical="10dp"
                         android:orientation="horizontal">
                         <RelativeLayout
@@ -195,7 +195,7 @@
                             >
                             <com.google.android.material.imageview.ShapeableImageView
                                 android:id="@+id/rfy9tsfy3pdd"
-                                app:shapeAppearanceOverlay="@style/cr3"
+
                                 android:layout_width="12dp"
                                 android:layout_height="12dp"
                                 android:src="@mipmap/ic_launcher"
@@ -219,7 +219,7 @@
                                     android:id="@+id/rphlqrcdzvr"
                                     android:layout_width="match_parent"
                                     android:layout_height="3dp"
-                                    android:background="@drawable/sffffffffsw1cr1bffffffff"
+
                                     android:orientation="vertical">
                                 </LinearLayout>
                             </LinearLayout>
@@ -287,7 +287,7 @@
                                 />
                             <com.google.android.material.imageview.ShapeableImageView
                                 android:id="@+id/rjcxhxnr5xis"
-                                app:shapeAppearanceOverlay="@style/cr3"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="13dp"
                                 android:src="@mipmap/ic_launcher"

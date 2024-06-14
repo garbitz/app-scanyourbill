@@ -8,21 +8,22 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsCompat.Type
+import com.example.scanyourbill.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+
+
+    private lateinit var binding: ActivityLoginBinding;
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val usernameField = findViewById<EditText>(R.id.username)
-        val submitButton = findViewById<Button>(R.id.submit)
+
+        val usernameField = binding.usernameEditText
+        val submitButton = binding.submitBtn
 
         submitButton.setOnClickListener {
             val username = usernameField.text.toString()
