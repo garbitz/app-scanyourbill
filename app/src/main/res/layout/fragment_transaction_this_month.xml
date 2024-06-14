@@ -6,8 +6,10 @@
     tools:context=".TransactionThisMonthFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="this month" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/trans_tab_2" />
 
 </FrameLayout>

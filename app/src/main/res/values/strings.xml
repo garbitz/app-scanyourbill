@@ -45,6 +45,25 @@
     <string name="trans_tab_1">Last Month</string>
     <string name="trans_tab_2">This Month</string>
     <string name="trans_tab_3">Future</string>
+    <string name="transaction">Transaction</string>
+    <string name="inflow">Inflow</string>
+    <string name="inflow_val">Amount Inflow</string>
+    <string name="outflow">Outflow</string>
+    <string name="outflow_val">Amount Outflow</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="budget_tab_1">Custom</string>
+    <string name="budget_tab_2">This Month</string>
+    <string name="budget_tab_3">This Quarter</string>
+    <string name="running_budget">Running Budget</string>
+    <string name="total_budget_this_period">Total budget this period</string>
+    <string name="total_spending_amount">Total spending amount</string>
+    <string name="end_of_this_period">End of this period</string>
+    <string name="this_period_budget">This</string>
+    <string name="total_spending">total</string>
+    <string name="end_of_period">Days</string>
+    <string name="remaining_amount">Remaining Amount</string>
+    <string name="total_remaining_spending_amount">Total Remaining Spending Amount</string>
+    <string name="create_another_budget">Create Another Budget</string>
 
 
 </resources>
