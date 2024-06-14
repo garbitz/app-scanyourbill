@@ -41,6 +41,9 @@ android {
 
 dependencies {
     implementation("com.google.android.gms:play-services-base:17.6.0");
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0");
+    implementation("app.futured.donut:donut:2.2.3");
+    implementation("ir.mahozad.android:pie-chart:0.7.0");
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

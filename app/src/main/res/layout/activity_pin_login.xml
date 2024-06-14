@@ -15,58 +15,69 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="72dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="3sp"
         android:text="@string/insert_your_pin"
         android:textAppearance="@style/insert_pin"
+        android:textStyle="bold"
         android:translationY="-1.61sp"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="119dp"
-        android:textStyle="bold"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.poovam.pinedittextfield.CirclePinField
         android:id="@+id/circleField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:inputType="text"
         android:textSelectHandle="@drawable/text_handle"
         android:textSize="16sp"
         app:circleRadius="8dp"
         app:fieldBgColor="#ddd"
-        app:fillerColor="@color/colorPrimary"
+        app:fillerColor="@color/white"
         app:fillerRadius="2dp"
-        app:noOfFields="6"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="174dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/masukkan_pi"
+        app:noOfFields="6" />
 
     <TextView
-        android:id="@+id/insert_labe"
+        android:id="@+id/insert_label1"
         android:layout_width="0dp"
         android:layout_height="26dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="100dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="7sp"
         android:text="@string/forget_label"
         android:textAppearance="@style/forget_label"
         android:translationY="-3.44sp"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="260dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleField" />
 
     <TextView
-        android:id="@+id/insert_labe"
+        android:id="@+id/insert_label2"
         android:layout_width="0dp"
         android:layout_height="26dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="32dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="7sp"
         android:text="@string/forget_btn"
         android:textAppearance="@style/forget_btn"
         android:textStyle="bold"
         android:translationY="-3.44sp"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="292dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insert_label1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

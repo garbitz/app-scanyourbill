@@ -1,5 +1,6 @@
 package com.example.scanyourbill
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -30,6 +31,9 @@ class LoginActivity : AppCompatActivity() {
             if (username.isNotEmpty()) {
                 // Handle login logic here
                 Toast.makeText(this, "Username: $username", Toast.LENGTH_SHORT).show()
+                // navigate to main activity
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             } else {
                 Toast.makeText(this, "Please enter a username", Toast.LENGTH_SHORT).show()
             }
