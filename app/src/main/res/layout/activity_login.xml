@@ -34,7 +34,7 @@
                     android:id="@+id/ryka1nib48u"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/sff5e27fdsw1bff8000c7"
+
                     android:paddingBottom="253dp"
                     android:clipChildren="false"
                     android:clipToPadding="false"
@@ -45,7 +45,7 @@
                         android:layout_width="369dp"
                         android:layout_height="358dp"
                         android:layout_marginBottom="16dp"
-                        android:background="@drawable/sff5e27fdsw1bff2f80ed"
+
                         android:clipChildren="false"
                         android:clipToPadding="false"
                         android:orientation="vertical"
@@ -57,13 +57,17 @@
                             android:layout_width="17dp"
                             android:layout_height="20dp"
                             android:layout_marginBottom="127dp"
-                            android:orientation="vertical"></LinearLayout>
+                            android:orientation="vertical">
+
+
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/reghkzh9igm6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="11dp"
+                            android:textFontWeight="900"
                             android:text="Selamat Datang Kembali"
                             android:textColor="#333333"
                             android:textSize="18sp" />
@@ -84,7 +88,7 @@
                                 android:layout_width="237dp"
                                 android:layout_height="71dp"
                                 android:layout_marginTop="18dp"
-                                android:src="@drawable/Logo"
+                                android:src="@drawable/logo"
                                 android:text="ScanYourBill"
                                 android:textColor="#5E07A0"
                                 android:textSize="20sp" />
@@ -99,40 +103,39 @@
                             android:textSize="14sp" />
                     </LinearLayout>
                     <EditText
-                        android:inputType="text"
-                        android:text="Username"
-                        android:id="@+id/rugv2k7vb3vp"
-                        android:textColor="#6C7988"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="57dp"
+                        android:id="@+id/usernameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="57dp"
                         android:background="@drawable/username_field_canvas"
-                        android:paddingVertical="21dp"
+                        android:hint="@string/username"
+                        android:inputType="text"
                         android:paddingHorizontal="17dp"
-                        />
+                        android:paddingVertical="21dp"
+                        android:textColorHint="#6C7988"
+                        android:textSize="14sp" />
 
-                    <LinearLayout
-                        android:id="@+id/rdw6nicdrk3v"
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/submitBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:background="@drawable/lanjut_btn_canvas"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         android:paddingVertical="19dp"
                         android:layout_marginHorizontal="16dp"
+                        app:backgroundTint="@null"
+                        android:background="@drawable/purple_btn_canvas"
+                        app:rippleColor="@android:color/transparent"
                         android:clipChildren="false"
                         android:clipToPadding="false"
-                        android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/r1x6lyw6yaeq"
-                            android:textColor="#C6C6C6"
-                            android:textSize="12sp"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="Lanjutkan"
-                            />
-                    </LinearLayout>
+                        android:gravity="center"
+                        android:text="Lanjutkan"
+                        android:textColor="#C6C6C6"
+                        android:textSize="12sp"
+                        app:cornerRadius="0dp"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.google.android.gms:play-services-base:17.6.0");
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -81,7 +81,7 @@
             android:id="@+id/category_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/icon_description"
+
             android:src="@drawable/ic_keyboard_arrow_down_24"
             tools:layout_editor_absoluteX="335dp"
             tools:layout_editor_absoluteY="196dp" />
@@ -179,7 +179,7 @@
         android:id="@+id/button"
         android:layout_width="240dp"
         android:layout_height="34dp"
-        android:background="@drawable/lanjut_btn_canvas"
+        android:background="@drawable/purple_btn_canvas"
         android:gravity="center_horizontal"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="573dp">

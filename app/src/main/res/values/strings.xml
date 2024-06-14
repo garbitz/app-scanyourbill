@@ -24,6 +24,7 @@
     <string name="dtl_category">Category</string>
     <string name="account">Account</string>
     <string name="detail">Detail</string>
+    <string name="username">Username</string>
 
 
 </resources>
