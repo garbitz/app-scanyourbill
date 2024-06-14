@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ScanYourBill"
         tools:targetApi="31">
         <activity
+            android:name=".ListTransactionActivity"
+            android:exported="false" />
+        <activity
             android:name=".PinLoginActivity"
             android:exported="false" />
         <activity

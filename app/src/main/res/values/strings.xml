@@ -37,6 +37,10 @@
     <string name="insert_your_pin">Masukkan PIN Kamu</string>
     <string name="forget_label">Kamu Lupa PIN?</string>
     <string name="forget_btn">Reset PIN Disini</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="trans_tab_1">Last Month</string>
+    <string name="trans_tab_2">This Month</string>
+    <string name="trans_tab_3">Future</string>
 
 
 </resources>
