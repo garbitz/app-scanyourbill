@@ -1,10 +1,7 @@
-package com.example.scanyourbill
+package com.example.scanyourbill.view.main
 
-import android.R
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.FrameLayout
-import androidx.annotation.Dimension
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scanyourbill.databinding.ActivityMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -12,6 +9,8 @@ import ir.mahozad.android.PieChart
 
 
 class MainActivity : AppCompatActivity() {
+
+
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +59,8 @@ class MainActivity : AppCompatActivity() {
             )
 
         }
+
+
 
     }
 }

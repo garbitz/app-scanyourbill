@@ -126,7 +126,7 @@
 
 
 
-                <FrameLayout
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
                     android:id="@+id/mainBottomSheet"
                     style="@style/Widget.Material3.BottomSheet"
                     android:layout_width="match_parent"
@@ -179,7 +179,7 @@
                     </LinearLayout>
 
 
-                </FrameLayout>
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

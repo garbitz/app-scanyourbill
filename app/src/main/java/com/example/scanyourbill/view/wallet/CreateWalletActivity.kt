@@ -1,10 +1,8 @@
-package com.example.scanyourbill
+package com.example.scanyourbill.view.wallet
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.scanyourbill.R
 
 class CreateWalletActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
