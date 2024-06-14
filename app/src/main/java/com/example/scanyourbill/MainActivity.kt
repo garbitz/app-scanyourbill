@@ -1,16 +1,25 @@
 package com.example.scanyourbill
 
+import android.R
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.scanyourbill.databinding.ActivityMainBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setContentView(R.layout.activity_main)
+
+        val bottomSheet = binding.mainBottomSheet
+        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
 
     }
 }

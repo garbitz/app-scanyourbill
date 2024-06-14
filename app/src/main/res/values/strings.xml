@@ -25,6 +25,10 @@
     <string name="account">Account</string>
     <string name="detail">Detail</string>
     <string name="username">Username</string>
+    <string name="top_spending_category">Top Spending Category</string>
+    <string name="clothes">Clothes</string>
+    <string name="most_used_wallet">Most Used Wallet</string>
+    <string name="tunai">Tunai</string>
     <string name="welcome_text">Selamat Datang Kembali</string>
     <string name="project_title">ScanYourBill</string>
     <string name="insert_username">Masukkan username kamu dibawah ya!</string>

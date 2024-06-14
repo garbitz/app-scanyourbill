@@ -1,28 +1,29 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#FFFFFFFF"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
+
     <LinearLayout
         android:id="@+id/roqfyqv01fp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#FFFAF0FF"
-        android:paddingBottom="-393dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="-393dp">
 
         <LinearLayout
             android:id="@+id/rmafhcc9962j"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+
             android:layout_marginBottom="11dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -50,8 +51,7 @@
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher"
-                     />
+                    android:src="@mipmap/ic_launcher" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -70,161 +70,114 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/rfuygc5ve31"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="20dp"
-            android:layout_marginHorizontal="120dp"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/r6vw4tfy7s5m"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="May, 2024"
-                />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                />
-            <ImageView
-                android:id="@+id/r8x5jv199ysq"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_keyboard_arrow_down_24"
-                android:scaleType="fitXY"
-                />
-        </LinearLayout>
+
+
+
+
+
         <RelativeLayout
-            android:id="@+id/rmpkm0f6y5ni_rl"
             android:layout_width="match_parent"
-            android:layout_height="195dp"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="21dp"
-            android:layout_marginHorizontal="20dp"
-            >
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rmpkm0f6y5ni"
+            android:layout_height="match_parent">
 
+
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="195dp"
-                android:src="@drawable/base_canvas_white"
-                android:scaleType="fitXY"
-                />
-            <LinearLayout
-                android:paddingVertical="23dp"
-                android:paddingHorizontal="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <RelativeLayout
-                    android:id="@+id/r9a702ej6ter_rl"
-                    android:layout_width="140dp"
-                    android:layout_height="140dp"
-                    android:layout_marginEnd="24dp"
-                    >
-                    <ImageView
-                        android:id="@+id/r9a702ej6ter"
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        android:src="@mipmap/ic_launcher"
-                        android:scaleType="fitXY"
-                        />
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                <FrameLayout
+                    android:id="@+id/mainBottomSheet"
+                    style="@style/Widget.Material3.BottomSheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:padding="16dp"
+                    app:behavior_peekHeight="400dp"
+                    app:behavior_hideable="false"
+                    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
                     <LinearLayout
-                        android:paddingVertical="37dp"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"/>
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/ry85rr4zn06m"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingHorizontal="1dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/rhvfh06hu8at"
-                        android:textColor="#000000"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="11dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Income"
-                        />
+                        android:orientation="vertical"
+                        >
 
-                    <TextView
-                        android:id="@+id/rwfyrt4zpis"
-                        android:textColor="#000000"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="11dp"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Balance"
-                        />
-                    <TextView
-                        android:id="@+id/r1so4iy9l90u"
-                        android:textColor="#000000"
-                        android:textSize="12sp"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Rp. 10.800.000 ,-"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-        </RelativeLayout>
-        <LinearLayout
-            android:id="@+id/rjllm4mrkrgf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:background="@drawable/purple_btn_canvas"
-            android:paddingVertical="13dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginHorizontal="60dp"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/r8fiwj8wfj2e"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Add new activity"
-                />
-        </LinearLayout>
+                        <!-- Drag handle for accessibility -->
+                        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                            android:id="@+id/drag_handle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:id="@+id/rx5no97mdr09"
-            android:layout_width="match_parent"
-            android:layout_height="461dp"
-            android:background="@drawable/base_canvas_white"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            android:elevation="60dp"
-            android:orientation="vertical"
-            android:paddingTop="9dp"
-            android:paddingBottom="392dp">
+                        <!-- Bottom sheet contents. -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/top_spending_category"
+                            android:textFontWeight="900"/>
 
-            <LinearLayout
-                android:id="@+id/rd0ui8d82xd9"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clothes" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/most_used_wallet"
+                            android:textFontWeight="900"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tunai" />
+
+
+
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_marginHorizontal="145dp"
-                android:layout_marginBottom="25dp"
-                android:background="@drawable/pullable_grey_canvas"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:menu="@menu/bottom_nav" />
+
+        </RelativeLayout>
 
 
-        </LinearLayout>
+
     </LinearLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav"/>
 </LinearLayout>
 
