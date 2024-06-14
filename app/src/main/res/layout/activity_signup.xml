@@ -68,7 +68,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="11dp"
                             android:textFontWeight="900"
-                            android:text="@string/welcome_text"
+                            android:text="@string/welcome_first"
                             android:textColor="#333333"
                             android:textSize="18sp" />
 
