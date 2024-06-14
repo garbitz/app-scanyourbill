@@ -50,7 +50,7 @@
                         android:clipToPadding="false"
                         android:orientation="vertical"
                         android:paddingVertical="5dp"
-                        android:paddingLeft="17dp">
+                        android:paddingStart="17dp">
 
                         <LinearLayout
                             android:id="@+id/r6xx64b6awok"
