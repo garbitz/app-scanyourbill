@@ -90,16 +90,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/card_home" />
+
+                    <ir.mahozad.android.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.116"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:gradientType="sweep"
+                        app:legendsIcon="square"
+                        app:legendsMargin="10dp"
+                        app:legendsSize="11sp"
+                        app:legendsPercentageSize="11sp"
+                        app:holeRatio="0"
 
 
-
-
-
-
-
-
-
-
+                        />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
