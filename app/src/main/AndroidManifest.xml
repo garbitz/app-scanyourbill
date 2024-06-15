@@ -15,8 +15,41 @@
         android:theme="@style/Theme.ScanYourBill"
         tools:targetApi="31">
         <activity
-            android:name=".ListBudgetActivity"
-            android:exported="true" >
+            android:name=".view.budget.ListBudgetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListTransactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.login.PinLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.login.PinSignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.login.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.transaction.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.transaction.TransactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.wallet.CreateWalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.wallet.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.login.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,42 +57,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ListTransactionActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".PinLoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PinSignupActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SignupActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TransactionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CreateWalletActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WalletActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".MainActivity"
+            android:name=".view.main.MainActivity"
             android:exported="true">
 
             <!-- <intent-filter> -->

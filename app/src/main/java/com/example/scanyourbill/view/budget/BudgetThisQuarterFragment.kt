@@ -1,4 +1,4 @@
-package com.example.scanyourbill
+package com.example.scanyourbill.view.budget
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -6,14 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.scanyourbill.R
 
-class BudgetCustomFragment : Fragment() {
+class BudgetThisQuarterFragment : Fragment() {
 
     companion object {
-        fun newInstance() = BudgetCustomFragment()
+        fun newInstance() = BudgetThisQuarterFragment()
     }
 
-    private val viewModel: BudgetCustomViewModel by viewModels()
+    private val viewModel: BudgetThisQuarterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,6 @@ class BudgetCustomFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_budget_custom, container, false)
+        return inflater.inflate(R.layout.fragment_budget_this_quarter, container, false)
     }
 }

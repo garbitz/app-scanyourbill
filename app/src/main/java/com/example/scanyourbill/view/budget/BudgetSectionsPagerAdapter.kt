@@ -1,4 +1,4 @@
-package com.example.scanyourbill
+package com.example.scanyourbill.view.budget
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

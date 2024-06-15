@@ -1,14 +1,12 @@
-package com.example.scanyourbill
+package com.example.scanyourbill.view.budget
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivityListBudgetBinding
-import com.example.scanyourbill.databinding.ActivityListTransactionBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
