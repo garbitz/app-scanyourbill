@@ -31,12 +31,13 @@ class LoginActivity : AppCompatActivity() {
 
         submitButton.setOnClickListener {
             val username = usernameField.text.toString()
-            val pin = "123456"
             if (username.isNotEmpty()) {
-                // Handle login logic here
-                Toast.makeText(this, "Username: $username", Toast.LENGTH_SHORT).show()
 
-                viewModel.login(username, pin);
+                // go into pinsignup activity and put extra username
+                viewModel.saveUsername(username)
+
+                val intent = Intent(this, PinSignupActivity::class.java)
+                startActivity(intent)
 
 
             } else {
@@ -44,32 +45,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.loginResult.observe(this, Observer { response ->
-            if (response.code == 200) {
-                val userLogin = UserModel(
-                    response.data?.username ?: "",
-                    response.tokens?.access?.token ?: "",
-                )
-
-                viewModel.saveSession(userLogin)
-
-
-                AlertDialog.Builder(this).apply {
-                    setTitle("Yeah!")
-                    setMessage("Anda berhasil login. Mari manage duit yok")
-                    setPositiveButton("Lanjut") { _, _ ->
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                        startActivity(intent)
-                        finish()
-                    }
-                    create()
-                    show()
-                }
-            } else {
-                Toast.makeText(this, response.message, Toast.LENGTH_SHORT).show()
-            }
-        })
     }
 
     private fun enableEdgeToEdge() {
