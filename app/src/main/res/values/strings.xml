@@ -64,6 +64,7 @@
     <string name="remaining_amount">Remaining Amount</string>
     <string name="total_remaining_spending_amount">Total Remaining Spending Amount</string>
     <string name="create_another_budget">Create Another Budget</string>
+    <string name="success_created_new_wallet">New wallet has been created</string>
 
 
 </resources>

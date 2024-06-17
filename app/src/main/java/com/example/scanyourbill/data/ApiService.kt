@@ -3,6 +3,8 @@ package com.example.scanyourbill.data
 import com.example.scanyourbill.data.response.HomeResponse
 import com.example.scanyourbill.data.response.LoginResponse
 import com.example.scanyourbill.data.response.SignupResponse
+import com.example.scanyourbill.data.response.WalletResponse
+import com.example.scanyourbill.data.response.WalletResponseAll
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -28,4 +30,16 @@ interface ApiService {
     suspend fun getHome(
         @Query("date") date: String
     ): HomeResponse
+
+    @GET("wallet")
+    suspend fun getWallet(): WalletResponseAll
+
+    @FormUrlEncoded
+    @POST("wallet")
+    suspend fun createWallet(
+        @Field("walletName") walletName: String,
+        @Field("amount") amount: Int,
+        @Field("note") note: String,
+        @Field("accountId") accountId: Int
+    ): WalletResponse
 }

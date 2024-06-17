@@ -38,20 +38,33 @@
         android:id="@+id/button"
         android:layout_width="240dp"
         android:layout_height="34dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/purple_btn_canvas"
         android:gravity="center_horizontal"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="98dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:lineSpacingExtra="0sp"
             android:text="@string/button"
             android:textAppearance="@style/button"
-            android:textColor="@color/white"
-            android:layout_centerInParent="true"/>
+            android:textColor="@color/white" />
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:layout_marginTop="20dp"
+        tools:listitem="@layout/item_wallet" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
