@@ -1,9 +1,11 @@
 package com.example.scanyourbill.view.main
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scanyourbill.databinding.ActivityMainBinding
+import com.example.scanyourbill.view.wallet.WalletActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ir.mahozad.android.PieChart
 
@@ -22,6 +24,11 @@ class MainActivity : AppCompatActivity() {
         val bottomSheet = binding.mainBottomSheet
         val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
+        val buttonWallet = binding.walletBtn
+        buttonWallet.setOnClickListener{
+            val intent = Intent(this, WalletActivity::class.java)
+            startActivity(intent)
+        }
 
         val pieChart = binding.pieChart
         pieChart.apply {
