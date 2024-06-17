@@ -20,6 +20,14 @@ class UserRepository private constructor(
         userPreference.saveSession(user)
     }
 
+    suspend fun saveUsername(username: String) {
+        userPreference.saveUsername(username)
+    }
+
+    fun getUsername(): Flow<String> {
+        return userPreference.getUsername()
+    }
+
     fun getSession(): Flow<UserModel> {
         return userPreference.getSession()
     }
