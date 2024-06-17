@@ -86,5 +86,7 @@ dependencies {
     implementation("com.github.mklimek:ssl-utils-android:1.0.1")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
+    implementation("com.github.derysudrajat:EasyAdapter:2.0.0")
+
 
 }

@@ -156,10 +156,11 @@
                             android:text="@string/top_spending_category"
                             android:textFontWeight="900"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvTopSpending"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/clothes" />
+                            android:paddingBottom="8dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -167,16 +168,10 @@
                             android:text="@string/most_used_wallet"
                             android:textFontWeight="900"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tunai" />
-                        
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/wallet_btn"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvTopWallet"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:text="wallet btn"/>
+                            android:layout_height="wrap_content" />
 
 
 

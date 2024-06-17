@@ -3,16 +3,23 @@ package com.example.scanyourbill.view.main
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.scanyourbill.databinding.ActivityMainBinding
-import com.example.scanyourbill.view.wallet.WalletActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import id.derysudrajat.easyadapter.EasyAdapter
 import ir.mahozad.android.PieChart
+import com.example.scanyourbill.databinding.ItemTopSpendingBinding
+import com.example.scanyourbill.view.ViewModelFactory
+import com.example.scanyourbill.view.wallet.WalletActivity
 
 
 class MainActivity : AppCompatActivity() {
 
-
+    private val viewModel by viewModels<MainViewModel>{
+        ViewModelFactory.getInstance(this)
+    }
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,15 +27,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val layoutManager = LinearLayoutManager(this)
+        binding.rvTopSpending.layoutManager = layoutManager
+
+        viewModel.homeResult.observe(this) { response ->
+            val listTopSpending = response.data?.topActivities?.filterNotNull() ?: emptyList()
+            binding.rvTopSpending.adapter = EasyAdapter(listTopSpending, ItemTopSpendingBinding::inflate) { binding, data ->
+                binding.tvCategory.text = data.category
+
+            }
+        }
+
+        viewModel.getHome("2024-06")
+
+
+
 
         val bottomSheet = binding.mainBottomSheet
         val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
-        val buttonWallet = binding.walletBtn
-        buttonWallet.setOnClickListener{
-            val intent = Intent(this, WalletActivity::class.java)
-            startActivity(intent)
-        }
 
         val pieChart = binding.pieChart
         pieChart.apply {
