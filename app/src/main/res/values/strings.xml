@@ -72,5 +72,15 @@
     <string name="see_all">See All</string>
     <string name="add_new_activity">Add New Activity</string>
     <string name="balance_rp10_800_000">Balance: Rp10.800.000</string>
+    <string name="salary">Salary</string>
+    <string name="incoming_transfer">Incoming Transfer</string>
+    <string name="dividend">Dividend</string>
+    <string name="clothing">Clothing</string>
+    <string name="food">Food</string>
+    <string name="stationery">Stationery</string>
+    <string name="toiletries">Toiletries</string>
+    <string name="medical_and_health_care">Medical and Health Care</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="others">Others</string>
 
 </resources>

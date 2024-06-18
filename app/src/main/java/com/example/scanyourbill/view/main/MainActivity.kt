@@ -23,6 +23,7 @@ import com.example.scanyourbill.databinding.ItemTopSpendingBinding
 import com.example.scanyourbill.formatCurrency
 import com.example.scanyourbill.formatNumber
 import com.example.scanyourbill.view.ViewModelFactory
+import com.example.scanyourbill.view.transaction.TransactionActivity
 import com.example.scanyourbill.view.wallet.WalletActivity
 import java.text.NumberFormat
 import java.time.format.DateTimeFormatter
@@ -56,6 +57,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.tvSeeAllWallet.setOnClickListener {
             val intent = Intent(this, WalletActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnAddActivity.setOnClickListener {
+            val intent = Intent(this, TransactionActivity::class.java)
             startActivity(intent)
         }
 

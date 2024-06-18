@@ -11,6 +11,7 @@ import com.example.scanyourbill.data.repository.WalletRepository
 import com.example.scanyourbill.view.main.MainViewModel
 import com.example.scanyourbill.di.Injection
 import com.example.scanyourbill.view.login.LoginViewModel
+import com.example.scanyourbill.view.transaction.TransactionViewModel
 import com.example.scanyourbill.view.wallet.WalletViewModel
 
 class ViewModelFactory(
@@ -33,6 +34,9 @@ class ViewModelFactory(
             }
             modelClass.isAssignableFrom(TransactionThisMonthViewModel::class.java) -> {
                 TransactionThisMonthViewModel(transactionRepository) as T
+            }
+            modelClass.isAssignableFrom(TransactionViewModel::class.java) -> {
+                TransactionViewModel(transactionRepository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
