@@ -25,7 +25,7 @@
     <string name="account">Account</string>
     <string name="detail">Detail</string>
     <string name="username">Username</string>
-    <string name="top_spending_category">Top Spending Category</string>
+    <string name="top_spending_category">Top Activity Category</string>
     <string name="clothes">Clothes</string>
     <string name="most_used_wallet">Most Used Wallet</string>
     <string name="tunai">Tunai</string>
@@ -66,6 +66,10 @@
     <string name="create_another_budget">Create Another Budget</string>
     <string name="category_1">Category 1</string>
     <string name="success_created_new_wallet">New wallet has been created</string>
+    <string name="rp100_000">Rp100.000</string>
+    <string name="see_all">See All</string>
+    <string name="add_new_activity">Add New Activity</string>
+    <string name="balance_rp10_800_000">Balance: Rp10.800.000</string>
 
 
 </resources>

@@ -1,9 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFFFF"
+    android:background="@color/purple_light_background"
     android:clipChildren="false"
     android:clipToPadding="false"
     android:orientation="vertical">
@@ -19,56 +20,56 @@
         android:orientation="vertical"
         android:paddingBottom="-393dp">
 
-        <LinearLayout
-            android:id="@+id/rmafhcc9962j"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+<!--        <LinearLayout-->
+<!--            android:id="@+id/rmafhcc9962j"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
 
-            android:layout_marginBottom="11dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+<!--            android:layout_marginBottom="11dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                android:id="@+id/rctv6ch327th"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Scan Your Bill"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+<!--            <TextView-->
+<!--                android:id="@+id/rctv6ch327th"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Scan Your Bill"-->
+<!--                android:textColor="#000000"-->
+<!--                android:textSize="18sp" />-->
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+<!--            <View-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1" />-->
 
-            <RelativeLayout
-                android:id="@+id/r85xijzzu3vm_rl"
-                android:layout_width="38dp"
-                android:layout_height="38dp">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/r85xijzzu3vm_rl"-->
+<!--                android:layout_width="38dp"-->
+<!--                android:layout_height="38dp">-->
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/r85xijzzu3vm"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher" />
+<!--                <com.google.android.material.imageview.ShapeableImageView-->
+<!--                    android:id="@+id/r85xijzzu3vm"-->
+<!--                    android:layout_width="38dp"-->
+<!--                    android:layout_height="38dp"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    android:src="@mipmap/ic_launcher" />-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="7dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingHorizontal="7dp">-->
 
-                    <ImageView
-                        android:id="@+id/rhyokdeysorv"
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:layout_marginTop="7dp"
-                        android:scaleType="fitXY"
-                        android:src="@mipmap/ic_launcher" />
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/rhyokdeysorv"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="24dp"-->
+<!--                        android:layout_marginTop="7dp"-->
+<!--                        android:scaleType="fitXY"-->
+<!--                        android:src="@mipmap/ic_launcher" />-->
+<!--                </LinearLayout>-->
+<!--            </RelativeLayout>-->
+<!--        </LinearLayout>-->
 
 
 
@@ -88,37 +89,167 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="280dp">
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvScanYourBill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:layout_marginTop="8dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:text="Scan Your Bill"
+                        app:layout_constraintBottom_toTopOf="@id/layoutMonth"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.049"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="8dp"
+
+                        android:src="@mipmap/ic_launcher"
+                        app:layout_constraintBottom_toTopOf="@id/layoutMonth"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="16dp" />
+
+                    <TextView
+                        android:id="@+id/tvMonthSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textFontWeight="900"
+                        android:text="@string/balance_rp10_800_000"
+                        app:layout_constraintTop_toBottomOf="@id/layoutMonth"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/layoutMonth"
+                        android:clickable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvScanYourBill"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/tvMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="8dp"
+                            android:text="June 2024"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/arrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_toEndOf="@id/tvMonth"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/arrow" />
+
+                    </RelativeLayout>
+
 
                     <ImageView
                         android:id="@+id/imageView"
-                        android:layout_width="407dp"
-                        android:layout_height="243dp"
-                        android:layout_marginTop="20dp"
-                        android:paddingHorizontal="16dp"
+                        android:layout_width="366dp"
+                        android:layout_height="207dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="24dp"
                         android:src="@drawable/card_home"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.500"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/tvMonthSummary" />
 
                     <ir.mahozad.android.PieChart
                         android:id="@+id/pieChart"
-                        android:layout_width="175dp"
-                        android:layout_height="175dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         app:gradientType="sweep"
                         app:holeRatio="0"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.156"
+                        app:layout_constraintHorizontal_bias="0.191"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/imageView"
-                        app:layout_constraintVertical_bias="0.485"
+                        app:layout_constraintVertical_bias="0.465"
                         app:legendsIcon="square"
                         app:legendsMargin="10dp"
 
 
                         app:legendsPercentageSize="11sp"
                         app:legendsSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvIncomeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="50dp"
+                        android:text="Income"
+                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintStart_toEndOf="@+id/pieChart" />
+
+                    <TextView
+                        android:id="@+id/tvIncomeAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginBottom="140dp"
+                        android:layout_marginTop="4dp"
+                        android:text="Rp10.000.000"
+                        app:layout_constraintTop_toBottomOf="@+id/tvIncomeTitle"
+
+                        app:layout_constraintStart_toEndOf="@+id/pieChart" />
+
+                    <TextView
+                        android:id="@+id/tvExpenseTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Expense"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintBottom_toTopOf="@+id/tvExpenseAmount"
+
+                        app:layout_constraintStart_toEndOf="@+id/pieChart" />
+
+                    <TextView
+                        android:id="@+id/tvExpenseAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="50dp"
+                        android:text="Rp1.200.000"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintStart_toEndOf="@+id/pieChart"
+                         />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddActivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/imageView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/add_new_activity"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/purple_btn_canvas"
+                        />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -133,7 +264,7 @@
                     android:layout_height="match_parent"
                     android:background="@android:color/white"
                     android:padding="16dp"
-                    app:behavior_peekHeight="400dp"
+                    app:behavior_peekHeight="320dp"
                     app:behavior_hideable="false"
                     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
@@ -150,11 +281,33 @@
                             android:layout_height="wrap_content" />
 
                         <!-- Bottom sheet contents. -->
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/top_spending_category"
-                            android:textFontWeight="900"/>
+                            android:orientation="horizontal">
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/top_spending_category"
+                                android:textFontWeight="900"/>
+
+                            <TextView
+                                android:id="@+id/tvSeeAllActivity"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="@string/see_all"
+                                android:layout_centerVertical="true"
+                                android:textColor="#A7A8A9"
+                                android:layout_alignParentEnd="true"
+                                android:textFontWeight="900"/>
+
+                        </RelativeLayout>
+
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rvTopSpending"
@@ -162,11 +315,32 @@
                             android:layout_height="wrap_content"
                             android:paddingBottom="8dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/most_used_wallet"
-                            android:textFontWeight="900"/>
+                            android:orientation="horizontal">
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/most_used_wallet"
+                                android:textFontWeight="900"/>
+
+                            <TextView
+                                android:id="@+id/tvSeeAllWallet"
+                                android:clickable="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="@string/see_all"
+                                android:layout_centerVertical="true"
+                                android:textColor="#A7A8A9"
+                                android:layout_alignParentEnd="true"
+                                android:textFontWeight="900"
+                                android:focusable="true" />
+
+                        </RelativeLayout>
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rvTopWallet"
@@ -186,11 +360,16 @@
 
 
 
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_above="@id/bottom_navigation"
+                android:background="@drawable/upper_shadow"/>
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_alignParentBottom="true"
                 app:menu="@menu/bottom_nav" />
 
