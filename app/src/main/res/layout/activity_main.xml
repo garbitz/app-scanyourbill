@@ -20,56 +20,56 @@
         android:orientation="vertical"
         android:paddingBottom="-393dp">
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/rmafhcc9962j"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/rmafhcc9962j"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
 
-<!--            android:layout_marginBottom="11dp"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:orientation="horizontal">-->
+        <!--            android:layout_marginBottom="11dp"-->
+        <!--            android:gravity="center_vertical"-->
+        <!--            android:orientation="horizontal">-->
 
-<!--            <TextView-->
-<!--                android:id="@+id/rctv6ch327th"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Scan Your Bill"-->
-<!--                android:textColor="#000000"-->
-<!--                android:textSize="18sp" />-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/rctv6ch327th"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Scan Your Bill"-->
+        <!--                android:textColor="#000000"-->
+        <!--                android:textSize="18sp" />-->
 
-<!--            <View-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="0dp"-->
-<!--                android:layout_weight="1" />-->
+        <!--            <View-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="0dp"-->
+        <!--                android:layout_weight="1" />-->
 
-<!--            <RelativeLayout-->
-<!--                android:id="@+id/r85xijzzu3vm_rl"-->
-<!--                android:layout_width="38dp"-->
-<!--                android:layout_height="38dp">-->
+        <!--            <RelativeLayout-->
+        <!--                android:id="@+id/r85xijzzu3vm_rl"-->
+        <!--                android:layout_width="38dp"-->
+        <!--                android:layout_height="38dp">-->
 
-<!--                <com.google.android.material.imageview.ShapeableImageView-->
-<!--                    android:id="@+id/r85xijzzu3vm"-->
-<!--                    android:layout_width="38dp"-->
-<!--                    android:layout_height="38dp"-->
-<!--                    android:scaleType="fitXY"-->
-<!--                    android:src="@mipmap/ic_launcher" />-->
+        <!--                <com.google.android.material.imageview.ShapeableImageView-->
+        <!--                    android:id="@+id/r85xijzzu3vm"-->
+        <!--                    android:layout_width="38dp"-->
+        <!--                    android:layout_height="38dp"-->
+        <!--                    android:scaleType="fitXY"-->
+        <!--                    android:src="@mipmap/ic_launcher" />-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:paddingHorizontal="7dp">-->
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="match_parent"-->
+        <!--                    android:orientation="vertical"-->
+        <!--                    android:paddingHorizontal="7dp">-->
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/rhyokdeysorv"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="24dp"-->
-<!--                        android:layout_marginTop="7dp"-->
-<!--                        android:scaleType="fitXY"-->
-<!--                        android:src="@mipmap/ic_launcher" />-->
-<!--                </LinearLayout>-->
-<!--            </RelativeLayout>-->
-<!--        </LinearLayout>-->
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/rhyokdeysorv"-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="24dp"-->
+        <!--                        android:layout_marginTop="7dp"-->
+        <!--                        android:scaleType="fitXY"-->
+        <!--                        android:src="@mipmap/ic_launcher" />-->
+        <!--                </LinearLayout>-->
+        <!--            </RelativeLayout>-->
+        <!--        </LinearLayout>-->
 
 
 
@@ -237,7 +237,7 @@
                         android:text="Rp1.200.000"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView"
                         app:layout_constraintStart_toEndOf="@+id/pieChart"
-                         />
+                        />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnAddActivity"
@@ -379,4 +379,3 @@
 
     </LinearLayout>
 </LinearLayout>
-

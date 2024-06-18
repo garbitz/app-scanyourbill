@@ -3,6 +3,7 @@ package com.example.scanyourbill.data
 import com.example.scanyourbill.data.response.HomeResponse
 import com.example.scanyourbill.data.response.LoginResponse
 import com.example.scanyourbill.data.response.SignupResponse
+import com.example.scanyourbill.data.response.TransactionResponse
 import com.example.scanyourbill.data.response.WalletResponse
 import com.example.scanyourbill.data.response.WalletResponseAll
 import retrofit2.http.Field
@@ -42,4 +43,13 @@ interface ApiService {
         @Field("note") note: String,
         @Field("accountId") accountId: Int
     ): WalletResponse
+
+    @FormUrlEncoded
+    @POST("detail/transaksi")
+    suspend fun getTransactions(
+        @Field("startDate") startDate: String,
+        @Field("endDate") endDate: String,
+        @Field("byCategory") byCategory: Boolean,
+        @Field("type") type: String
+    ): TransactionResponse
 }
