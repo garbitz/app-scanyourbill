@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ScanYourBill"
         tools:targetApi="31">
         <activity
+            android:name=".view.EmptyActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.budget.ListBudgetActivity"
             android:exported="false" />
         <activity
@@ -55,9 +58,7 @@
             android:exported="false" />
         <activity
             android:name=".view.login.LoginActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.main.MainActivity"
             android:exported="true">

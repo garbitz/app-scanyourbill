@@ -76,6 +76,7 @@ dependencies {
 
     // PIN Edit Text Field
     implementation("com.github.poovamraj:PinEditTextField:1.2.6")
+    implementation(libs.androidx.activity)
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")
@@ -87,6 +88,7 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
     implementation("com.github.derysudrajat:EasyAdapter:2.0.0")
+    implementation("io.github.dzmitry-lakisau:month-year-picker-dialog:1.0.0")
 
 
 }
