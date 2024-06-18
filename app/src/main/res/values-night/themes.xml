@@ -3,10 +3,13 @@
     <style name="Base.Theme.ScanYourBill" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <item name="android:fontFamily">@font/manrope</item>
+
     </style>
 
-    <style name="ThemeOverlay.ScanYourBill.FullscreenContainer" parent="">
-        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>
-        <item name="fullscreenTextColor">@color/light_blue_A400</item>
-    </style>
+<!--    <style name="ThemeOverlay.ScanYourBill.FullscreenContainer" parent="">-->
+<!--        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>-->
+<!--        <item name="fullscreenTextColor">@color/light_blue_A400</item>-->
+<!--    </style>-->
 </resources>
