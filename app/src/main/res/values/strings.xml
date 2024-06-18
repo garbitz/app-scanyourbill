@@ -13,7 +13,7 @@
     <string name="wallet">Tunai</string>
     <string name="notes">Notes</string>
     <string name="icon">Icon</string>
-    <string name="search">Search</string>
+    <string name="search">Search Notes</string>
     <string name="act_type">Type</string>
     <string name="clear">Clear</string>
     <string name="dtl_type">Type</string>
@@ -72,5 +72,6 @@
     <string name="see_all">See All</string>
     <string name="add_new_activity">Add New Activity</string>
     <string name="balance_rp10_800_000">Balance: Rp10.800.000</string>
+    <string name="type">Select Type</string>
 
 </resources>
