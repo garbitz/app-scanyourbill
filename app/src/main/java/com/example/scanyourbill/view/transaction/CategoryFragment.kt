@@ -1,12 +1,15 @@
 package com.example.scanyourbill.view.transaction
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.example.scanyourbill.R
+import com.example.scanyourbill.view.ViewModelFactory
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -15,6 +18,14 @@ import com.google.android.material.tabs.TabLayoutMediator
  * status bar and navigation/system bar) with user interaction.
  */
 class CategoryFragment : Fragment() {
+
+    private lateinit var viewModel: TransactionViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this, ViewModelFactory.getInstance(requireActivity().applicationContext))
+            .get(TransactionViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,5 +48,29 @@ class CategoryFragment : Fragment() {
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(CategorySectionsPagerAdapter.TAB_TITLES[position])
         }.attach()
+
+        // Observe selectedCategory LiveData
+        viewModel.selectedCategory.observe(viewLifecycleOwner) { category ->
+            // Close this fragment when a category is selected
+            Log.d("catfrag3: ", category)
+
+            if (category != null) {
+                Log.d("catfrag: ", category)
+                parentFragmentManager.popBackStack()
+            }
+        }
+    }
+
+    var onCategorySelectedCallback: OnCategorySelectedCallback? = null
+
+    private fun onCategorySelected(categoryId: String) {
+        onCategorySelectedCallback?.invoke(categoryId)
+        closeFragment()
+    }
+    private fun closeFragment() {
+        parentFragmentManager.popBackStack()
     }
 }
+
+typealias OnCategorySelectedCallback = (String) -> Unit
+
