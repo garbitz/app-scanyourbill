@@ -23,8 +23,9 @@ import com.example.scanyourbill.databinding.ItemTopSpendingBinding
 import com.example.scanyourbill.formatCurrency
 import com.example.scanyourbill.formatNumber
 import com.example.scanyourbill.view.ViewModelFactory
-import com.example.scanyourbill.view.transaction.TransactionActivity
 import com.example.scanyourbill.view.wallet.WalletActivity
+import com.example.scanyourbill.view.transaction.TransactionActivity
+import com.example.scanyourbill.view.search.SearchActivity
 import java.text.NumberFormat
 import java.time.format.DateTimeFormatter
 import java.time.LocalDate
@@ -54,6 +55,11 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager2 = LinearLayoutManager(this)
         binding.rvTopWallet.layoutManager = layoutManager2
+
+        binding.btnSearch.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.tvSeeAllWallet.setOnClickListener {
             val intent = Intent(this, WalletActivity::class.java)

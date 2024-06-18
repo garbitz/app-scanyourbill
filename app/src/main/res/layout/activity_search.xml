@@ -14,19 +14,16 @@
         android:id="@+id/rectangle_1"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="0dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/search_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/search"
-            android:textAppearance="@style/select_wall"
             android:layout_centerInParent="true"
-            />
+            android:text="@string/search"
+            android:textAppearance="@style/select_wall" />
     </RelativeLayout>
 
 
@@ -34,138 +31,134 @@
         android:id="@+id/zoom_dynami"
         android:layout_width="159dp"
         android:layout_height="157dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/search_img_big"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="87dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_1" />
 
-    <LinearLayout
-        android:id="@+id/rectangle_6"
-        android:layout_width="328dp"
-        android:layout_height="47dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/wide_picker_white"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="10dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="441dp">
 
-        <TextView
-            android:id="@+id/wallet"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/category"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="199dp" />
 
-        <ImageView
-            android:id="@+id/wallet_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_keyboard_arrow_down_24"
-            tools:layout_editor_absoluteX="335dp"
-            tools:layout_editor_absoluteY="196dp" />
-    </LinearLayout>
-
-    <LinearLayout
+    <EditText
         android:id="@+id/rectangle_3"
         android:layout_width="328dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="73dp"
+        android:hint="@string/search"
         android:background="@drawable/wide_picker_white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="311dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
 
-        <TextView
-            android:id="@+id/category"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="199dp" />
+        app:layout_constraintTop_toBottomOf="@+id/zoom_dynami">
 
-    </LinearLayout>
 
-    <LinearLayout
+
+    </EditText>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/rectangle_5"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
         android:layout_width="328dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
         android:background="@drawable/wide_picker_white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="378dp">
+        android:hint="@string/type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_3">
 
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/act_type"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="199dp" />
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            app:simpleItems="@array/simple_items"
+            />
 
-        <ImageView
-            android:id="@+id/date_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_keyboard_arrow_down_24"
-            tools:layout_editor_absoluteX="335dp"
-            tools:layout_editor_absoluteY="196dp" />
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rectangle_6"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="328dp"
+        android:layout_height="47dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/wide_picker_white"
+        android:hint="@string/category"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_5">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            app:simpleItems="@array/simple_items"
+            />
+
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Auto layout, variables, and unit scale are not yet supported -->
-    <RelativeLayout
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/clear_btn"
         android:layout_width="96dp"
         android:layout_height="46dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/grey_btn"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="559dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:lineSpacingExtra="0sp"
-            android:text="@string/clear"
-            android:textAppearance="@style/button"
-            android:textColor="@color/white" />
-    </RelativeLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_6">
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:lineSpacingExtra="0sp"-->
+        <!--            android:text="@string/clear"-->
+        <!--            android:textAppearance="@style/button"-->
+        <!--            android:textColor="@color/white" />-->
+    </com.google.android.material.button.MaterialButton>
 
-    <RelativeLayout
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/search_btn"
         android:layout_width="96dp"
         android:layout_height="46dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/purple_btn_canvas"
-        tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="559dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_6">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:lineSpacingExtra="0sp"
-            android:text="@string/search"
-            android:textAppearance="@style/button"
-            android:textColor="@color/white" />
-    </RelativeLayout>
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:lineSpacingExtra="0sp"-->
+        <!--            android:text="@string/search"-->
+        <!--            android:textAppearance="@style/button"-->
+        <!--            android:textColor="@color/white" />-->
+    </com.google.android.material.button.MaterialButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
