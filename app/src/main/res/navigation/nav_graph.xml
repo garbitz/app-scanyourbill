@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/transactionActivity">
+
+    <activity
+        android:id="@+id/transactionActivity"
+        android:name="com.example.scanyourbill.view.transaction.TransactionActivity"
+        android:label="Transaction Activity">
+        <action
+            android:id="@+id/action_transaction_to_category"
+            app:destination="@id/categoryFragment" />
+    </activity>
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.scanyourbill.view.transaction.CategoryFragment"
+        android:label="Category Fragment" />
+
+</navigation>

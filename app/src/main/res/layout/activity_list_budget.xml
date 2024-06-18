@@ -60,17 +60,19 @@
         android:layout_height="210dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/canvas_card_white"
-        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="18dp"
-        android:layout_marginHorizontal="24dp">
+        android:background="@drawable/canvas_card_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <TextView
@@ -85,7 +87,7 @@
                 android:text="@string/total_budget_this_period"
                 android:textAppearance="@style/inflow"
                 android:translationY="-3.12sp"
-                tools:layout_editor_absoluteX="1dp"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="3dp" />
 
             <TextView
@@ -93,7 +95,6 @@
                 android:layout_width="141dp"
                 android:layout_height="26dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="64dp"
                 android:gravity="top"
                 android:lineSpacingExtra="8sp"
                 android:paddingTop="6dp"
@@ -101,7 +102,7 @@
                 android:textAppearance="@style/inflow_val"
                 android:textStyle="bold"
                 android:translationY="-3.8sp"
-                app:layout_constraintStart_toEndOf="@+id/inflow"
+                app:layout_constraintEnd_toEndOf="parent"
                 tools:layout_editor_absoluteY="3dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -125,7 +126,7 @@
                 android:text="@string/total_spending_amount"
                 android:textAppearance="@style/inflow"
                 android:translationY="-3.12sp"
-                tools:layout_editor_absoluteX="1dp"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="3dp" />
 
             <TextView
@@ -133,7 +134,6 @@
                 android:layout_width="140dp"
                 android:layout_height="29dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="64dp"
                 android:gravity="top"
                 android:lineSpacingExtra="8sp"
                 android:paddingTop="6dp"
@@ -141,7 +141,7 @@
                 android:textAppearance="@style/outflow_val"
                 android:textStyle="bold"
                 android:translationY="-3.8sp"
-                app:layout_constraintStart_toEndOf="@+id/outflow"
+                app:layout_constraintEnd_toEndOf="parent"
                 tools:layout_editor_absoluteY="1dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -166,16 +166,14 @@
                 android:text="@string/end_of_this_period"
                 android:textAppearance="@style/inflow"
                 android:translationY="-3.12sp"
-                tools:layout_editor_absoluteX="1dp"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="3dp" />
 
             <TextView
                 android:id="@+id/end_period_val"
                 android:layout_width="139dp"
                 android:layout_height="26dp"
-
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="92dp"
                 android:gravity="top"
                 android:lineSpacingExtra="8sp"
                 android:paddingTop="6dp"
@@ -183,7 +181,7 @@
                 android:textAppearance="@style/outflow_val"
                 android:textStyle="bold"
                 android:translationY="-3.8sp"
-                app:layout_constraintStart_toEndOf="@+id/end_period"
+                app:layout_constraintEnd_toEndOf="parent"
                 tools:layout_editor_absoluteY="2dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -200,18 +198,18 @@
                 android:layout_alignParentTop="true"
                 android:lineSpacingExtra="-1sp"
                 android:text="@string/remaining_amount"
-                android:textAppearance="@style/remaining_amount"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:textAlignment="center"
-                android:textStyle="bold"/>
+                android:textAppearance="@style/remaining_amount"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/total_remai"
                 android:layout_width="168dp"
                 android:layout_height="54dp"
-                android:lineSpacingExtra="9sp"
                 android:layout_marginTop="10dp"
+                android:lineSpacingExtra="9sp"
                 android:text="@string/total_remaining_spending_amount"
                 android:textAlignment="center"
                 android:textAppearance="@style/inflow"

@@ -78,12 +78,12 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:lineSpacingExtra="6sp"
-                android:paddingLeft="10dp"
+                android:layout_marginLeft="10dp"
                 android:paddingTop="6dp"
                 android:text="@string/inflow"
                 android:textAppearance="@style/inflow"
                 android:translationY="-3.12sp"
-                tools:layout_editor_absoluteX="1dp"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="3dp" />
 
             <TextView
@@ -91,7 +91,6 @@
                 android:layout_width="83dp"
                 android:layout_height="24dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="140dp"
                 android:gravity="top"
                 android:lineSpacingExtra="8sp"
                 android:paddingTop="6dp"
@@ -99,8 +98,9 @@
                 android:textAppearance="@style/inflow_val"
                 android:textStyle="bold"
                 android:translationY="-3.8sp"
-                app:layout_constraintStart_toEndOf="@+id/inflow"
-                tools:layout_editor_absoluteY="3dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="3dp"
+                android:layout_marginRight="20dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -118,12 +118,12 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:lineSpacingExtra="6sp"
-                android:paddingLeft="10dp"
+                android:layout_marginLeft="10dp"
                 android:paddingTop="6dp"
                 android:text="@string/outflow"
                 android:textAppearance="@style/inflow"
                 android:translationY="-3.12sp"
-                tools:layout_editor_absoluteX="1dp"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="3dp" />
 
             <TextView
@@ -131,7 +131,6 @@
                 android:layout_width="83dp"
                 android:layout_height="24dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="140dp"
                 android:gravity="top"
                 android:lineSpacingExtra="8sp"
                 android:paddingTop="6dp"
@@ -139,8 +138,9 @@
                 android:textAppearance="@style/outflow_val"
                 android:textStyle="bold"
                 android:translationY="-3.8sp"
-                app:layout_constraintStart_toEndOf="@+id/outflow"
-                tools:layout_editor_absoluteY="3dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="3dp"
+                android:layout_marginRight="20dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -174,5 +174,13 @@
             android:layout_marginBottom="36dp"
             android:layout_marginHorizontal="10dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+        app:menu="@menu/bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

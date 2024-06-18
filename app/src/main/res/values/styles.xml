@@ -74,4 +74,9 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#22F000</item>
     </style>
+
+    <style name="Widget.Theme.ScanYourBill.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
 </resources>

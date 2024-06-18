@@ -4,6 +4,7 @@ package com.example.scanyourbill.view
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.scanyourbill.TransactionThisMonthViewModel
 import com.example.scanyourbill.data.repository.TransactionRepository
 import com.example.scanyourbill.data.repository.UserRepository
 import com.example.scanyourbill.data.repository.WalletRepository
@@ -29,6 +30,9 @@ class ViewModelFactory(
             }
             modelClass.isAssignableFrom(WalletViewModel::class.java) -> {
                 WalletViewModel(walletRepository) as T
+            }
+            modelClass.isAssignableFrom(TransactionThisMonthViewModel::class.java) -> {
+                TransactionThisMonthViewModel(transactionRepository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

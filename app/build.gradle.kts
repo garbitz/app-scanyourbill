@@ -76,6 +76,8 @@ dependencies {
 
     // PIN Edit Text Field
     implementation("com.github.poovamraj:PinEditTextField:1.2.6")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")

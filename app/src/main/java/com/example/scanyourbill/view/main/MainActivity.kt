@@ -6,13 +6,18 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.scanyourbill.ListTransactionActivity
+import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivityMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import id.derysudrajat.easyadapter.EasyAdapter
 import ir.mahozad.android.PieChart
 import com.example.scanyourbill.databinding.ItemTopSpendingBinding
 import com.example.scanyourbill.view.ViewModelFactory
+import com.example.scanyourbill.view.transaction.TransactionActivity
+import com.example.scanyourbill.view.wallet.CreateWalletActivity
 import com.example.scanyourbill.view.wallet.WalletActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +43,32 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val button = binding.title
+        button.setOnClickListener{
+            val intent = Intent(this, TransactionActivity::class.java)
+            startActivity(intent)
+        }
+
         viewModel.getHome("2024-06")
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomNavigationView.menu.findItem(R.id.home)?.isChecked = true
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    true
+                }
+                R.id.transaksi -> {
+                    val intent = Intent(this, ListTransactionActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
+
 
 
 

@@ -3,6 +3,7 @@ package com.example.scanyourbill.data.repository
 import com.example.scanyourbill.data.ApiService
 import com.example.scanyourbill.data.UserPreference
 import com.example.scanyourbill.data.response.HomeResponse
+import com.example.scanyourbill.data.response.TransactionResponse
 
 class TransactionRepository private constructor(
     private val userPreference: UserPreference,
@@ -10,6 +11,10 @@ class TransactionRepository private constructor(
 ) {
     suspend fun getHome(date: String): HomeResponse {
         return apiService.getHome(date)
+    }
+
+    suspend fun getTransactions(startDate: String, endDate: String, byCategory: Boolean, type: String): TransactionResponse {
+        return apiService.getTransactions(startDate, endDate, byCategory, type)
     }
 
 

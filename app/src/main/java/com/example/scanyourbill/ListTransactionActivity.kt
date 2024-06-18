@@ -1,5 +1,6 @@
 package com.example.scanyourbill
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
@@ -9,6 +10,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.scanyourbill.databinding.ActivityListTransactionBinding
 import com.example.scanyourbill.databinding.ActivityLoginBinding
+import com.example.scanyourbill.view.main.MainActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -30,6 +33,24 @@ class ListTransactionActivity : AppCompatActivity() {
         binding = ActivityListTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomNavigationView.menu.findItem(R.id.transaksi)?.isChecked = true
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.transaksi -> {
+                    true
+                }
+
+                else -> false
+            }
+        }
+
         val sectionsPagerAdapter = TransactionSectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
@@ -39,4 +60,6 @@ class ListTransactionActivity : AppCompatActivity() {
         }.attach()
         supportActionBar?.elevation = 0f
     }
+
+
 }

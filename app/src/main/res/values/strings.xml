@@ -66,6 +66,10 @@
     <string name="create_another_budget">Create Another Budget</string>
     <string name="category_1">Category 1</string>
     <string name="success_created_new_wallet">New wallet has been created</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="expense">expense</string>
+    <string name="income">income</string>
 
 
 </resources>
