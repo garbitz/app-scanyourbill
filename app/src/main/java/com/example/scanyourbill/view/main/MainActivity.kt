@@ -90,8 +90,8 @@ class MainActivity : AppCompatActivity() {
 
                 },
                 themeResId = R.style.Style_MonthYearPickerDialog_Orange,
-                selectedYear = 2024,
-                selectedMonth = 1
+                selectedYear = today.year,
+                selectedMonth = today.monthValue-1
             ).build()
 
             dialog.setTitle("Select month and year")

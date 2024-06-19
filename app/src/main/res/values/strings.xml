@@ -73,6 +73,10 @@
     <string name="add_new_activity">Add New Activity</string>
     <string name="balance_rp10_800_000">Balance: Rp10.800.000</string>
     <string name="type">Select Type</string>
+    <string name="income_capital_i">Income</string>
+    <string name="expense_capital_e">Expense</string>
+    <string name="search_only">Search</string>
+
     <string name="salary">Salary</string>
     <string name="incoming_transfer">Incoming Transfer</string>
     <string name="dividend">Dividend</string>
@@ -83,4 +87,6 @@
     <string name="medical_and_health_care">Medical and Health Care</string>
     <string name="entertainment">Entertainment</string>
     <string name="others">Others</string>
+    <string name="_25_juni_2024">25 Juni 2024</string>
+    <string name="paket_telkomsel_sangat_mahal_sekali">Paket Telkomsel sangat mahal sekali</string>
 </resources>
