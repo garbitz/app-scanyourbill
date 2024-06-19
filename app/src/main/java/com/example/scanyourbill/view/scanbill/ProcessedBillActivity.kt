@@ -7,16 +7,21 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.scanyourbill.R
 import com.example.scanyourbill.data.response.BillResponse
 import com.example.scanyourbill.databinding.ActivityProcessedBillBinding
 import com.example.scanyourbill.view.ViewModelFactory
+import com.example.scanyourbill.view.transaction.TransactionParentAdapter
 
 class ProcessedBillActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProcessedBillBinding
     private val viewModel: BillViewModel by viewModels {
         ViewModelFactory.getInstance(applicationContext)
     }
+
+    private lateinit var parentAdapter: BillParentAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +49,11 @@ class ProcessedBillActivity : AppCompatActivity() {
             // Handle the response here
             displayBillData(response)
         }
+
+//        val parentRecyclerView: RecyclerView = binding.rvParent
+//        parentRecyclerView.layoutManager = LinearLayoutManager(this)
+//        parentAdapter = TransactionParentAdapter(emptyList())
+//        parentRecyclerView.adapter = parentAdapter
     }
 
     private fun showImage(uri: Uri) {
@@ -55,6 +65,7 @@ class ProcessedBillActivity : AppCompatActivity() {
     }
 
     private fun displayBillData(billResponse: BillResponse) {
+
 //        binding.billNameTextView.text = billResponse.data?.billDetails?.billName
 //        binding.grandTotalTextView.text = billResponse.data?.billDetails?.grandTotal.toString()
 //

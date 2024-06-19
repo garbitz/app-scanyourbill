@@ -2,13 +2,17 @@ package com.example.scanyourbill.data.repository
 
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import com.example.scanyourbill.data.ApiService
+import com.example.scanyourbill.data.UploadImageRequest
 import com.example.scanyourbill.data.UserPreference
 import com.example.scanyourbill.data.response.BillResponse
 import com.example.scanyourbill.data.response.WalletResponse
 import com.example.scanyourbill.data.response.WalletResponseAll
 import com.example.scanyourbill.view.scanbill.ImageUtils
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.toRequestBody
 
 class BillRepository private constructor(
     private val userPreference: UserPreference,
@@ -17,7 +21,8 @@ class BillRepository private constructor(
 
     suspend fun uploadBillImage(uri: Uri, context: Context): BillResponse {
         val base64Image = ImageUtils.uriToBase64(context, uri)
-        return apiService.uploadBillImage(base64Image)
+        val request = UploadImageRequest(images = base64Image)
+        return apiService.uploadBillImage(request)
     }
 
 

@@ -9,7 +9,9 @@ import com.example.scanyourbill.data.response.SignupResponse
 import com.example.scanyourbill.data.response.TransactionResponse
 import com.example.scanyourbill.data.response.WalletResponse
 import com.example.scanyourbill.data.response.WalletResponseAll
+import com.google.gson.annotations.SerializedName
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -75,7 +77,7 @@ interface ApiService {
 
     @POST("bill/readImages")
     suspend fun uploadBillImage(
-        @Body base64Image: String
+        @Body request: UploadImageRequest
     ): BillResponse
 
     @FormUrlEncoded
@@ -85,4 +87,10 @@ interface ApiService {
         @Field("category") category: String,
         @Field("type") type: String
     ): SearchResponse
+
 }
+
+data class UploadImageRequest(
+    @SerializedName("images")
+    val images: String
+)
