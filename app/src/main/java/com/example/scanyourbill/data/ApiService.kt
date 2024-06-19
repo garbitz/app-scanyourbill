@@ -4,6 +4,7 @@ import com.example.scanyourbill.data.response.BillResponse
 import com.example.scanyourbill.data.response.CreateTransactionResponse
 import com.example.scanyourbill.data.response.HomeResponse
 import com.example.scanyourbill.data.response.LoginResponse
+import com.example.scanyourbill.data.response.SearchResponse
 import com.example.scanyourbill.data.response.SignupResponse
 import com.example.scanyourbill.data.response.TransactionResponse
 import com.example.scanyourbill.data.response.WalletResponse
@@ -76,4 +77,12 @@ interface ApiService {
     suspend fun uploadBillImage(
         @Body base64Image: String
     ): BillResponse
+
+    @FormUrlEncoded
+    @POST("detail/search")
+    suspend fun search(
+        @Field("key") notes: String,
+        @Field("category") category: String,
+        @Field("type") type: String
+    ): SearchResponse
 }
