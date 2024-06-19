@@ -23,6 +23,7 @@ import com.example.scanyourbill.databinding.ItemTopSpendingBinding
 import com.example.scanyourbill.formatCurrency
 import com.example.scanyourbill.formatNumber
 import com.example.scanyourbill.view.ViewModelFactory
+import com.example.scanyourbill.view.scanbill.ScanBillActivity
 import com.example.scanyourbill.view.wallet.WalletActivity
 import com.example.scanyourbill.view.transaction.TransactionActivity
 import com.example.scanyourbill.view.search.SearchActivity
@@ -68,6 +69,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnAddActivity.setOnClickListener {
             val intent = Intent(this, TransactionActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.tvScanYourBill.setOnClickListener{
+            val intent = Intent(this, ScanBillActivity::class.java)
             startActivity(intent)
         }
 
