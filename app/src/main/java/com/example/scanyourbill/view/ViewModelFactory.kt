@@ -5,19 +5,22 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.scanyourbill.TransactionThisMonthViewModel
+import com.example.scanyourbill.data.repository.BillRepository
 import com.example.scanyourbill.data.repository.TransactionRepository
 import com.example.scanyourbill.data.repository.UserRepository
 import com.example.scanyourbill.data.repository.WalletRepository
 import com.example.scanyourbill.view.main.MainViewModel
 import com.example.scanyourbill.di.Injection
 import com.example.scanyourbill.view.login.LoginViewModel
+import com.example.scanyourbill.view.scanbill.BillViewModel
 import com.example.scanyourbill.view.transaction.TransactionViewModel
 import com.example.scanyourbill.view.wallet.WalletViewModel
 
 class ViewModelFactory(
     private val userRepository: UserRepository,
     private val transactionRepository: TransactionRepository,
-    private val walletRepository: WalletRepository
+    private val walletRepository: WalletRepository,
+    private val billRepository: BillRepository
 ) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
@@ -38,6 +41,9 @@ class ViewModelFactory(
             modelClass.isAssignableFrom(TransactionViewModel::class.java) -> {
                 TransactionViewModel(transactionRepository) as T
             }
+            modelClass.isAssignableFrom(BillViewModel::class.java) -> {
+                BillViewModel(billRepository) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }
@@ -56,7 +62,8 @@ class ViewModelFactory(
             val userRepository = Injection.provideUserRepository(context)
             val transactionRepository = Injection.provideTransactionRepository(context)
             val walletRepository = Injection.provideWalletRepository(context)
-            return ViewModelFactory(userRepository, transactionRepository, walletRepository)
+            val billRepository = Injection.provideBillRepository(context)
+            return ViewModelFactory(userRepository, transactionRepository, walletRepository, billRepository)
         }
     }
 }

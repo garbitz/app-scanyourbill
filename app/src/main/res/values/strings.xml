@@ -83,4 +83,5 @@
     <string name="medical_and_health_care">Medical and Health Care</string>
     <string name="entertainment">Entertainment</string>
     <string name="others">Others</string>
+    <string name="bill_scanner">Bill Scanner</string>
 </resources>

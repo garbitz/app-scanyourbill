@@ -1,5 +1,6 @@
 package com.example.scanyourbill.data
 
+import com.example.scanyourbill.data.response.BillResponse
 import com.example.scanyourbill.data.response.CreateTransactionResponse
 import com.example.scanyourbill.data.response.HomeResponse
 import com.example.scanyourbill.data.response.LoginResponse
@@ -7,10 +8,14 @@ import com.example.scanyourbill.data.response.SignupResponse
 import com.example.scanyourbill.data.response.TransactionResponse
 import com.example.scanyourbill.data.response.WalletResponse
 import com.example.scanyourbill.data.response.WalletResponseAll
+import okhttp3.MultipartBody
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Query
 
 interface ApiService {
@@ -66,4 +71,9 @@ interface ApiService {
         @Field("iconId") iconId: Int,
         @Field("billId") billId: Int
     ): CreateTransactionResponse
+
+    @POST("bill/readImages")
+    suspend fun uploadBillImage(
+        @Body base64Image: String
+    ): BillResponse
 }
