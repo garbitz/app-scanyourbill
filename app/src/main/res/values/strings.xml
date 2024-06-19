@@ -73,6 +73,9 @@
     <string name="add_new_activity">Add New Activity</string>
     <string name="balance_rp10_800_000">Balance: Rp10.800.000</string>
     <string name="type">Select Type</string>
+    <string name="income_capital_i">Income</string>
+    <string name="expense_capital_e">Expense</string>
+
     <string name="salary">Salary</string>
     <string name="incoming_transfer">Incoming Transfer</string>
     <string name="dividend">Dividend</string>
