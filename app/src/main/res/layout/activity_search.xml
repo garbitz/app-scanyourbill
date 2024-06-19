@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/search"
+            android:text="@string/search_only"
             android:textAppearance="@style/select_wall" />
     </RelativeLayout>
 
@@ -40,7 +40,7 @@
 
 
     <EditText
-        android:id="@+id/rectangle_3"
+        android:id="@+id/notesEditText"
         android:layout_width="328dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
@@ -75,7 +75,7 @@
         android:hint="@string/type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_3">
+        app:layout_constraintTop_toBottomOf="@+id/notesEditText">
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteInputType"
@@ -127,17 +127,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="72dp"
+        android:text="@string/clear"
         android:background="@drawable/grey_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputCategory">
-        <!--        <TextView-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_centerInParent="true"-->
-        <!--            android:lineSpacingExtra="0sp"-->
-        <!--            android:text="@string/clear"-->
-        <!--            android:textAppearance="@style/button"-->
-        <!--            android:textColor="@color/white" />-->
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
@@ -148,18 +141,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="40dp"
+        android:text="@string/search_only"
         android:background="@drawable/purple_btn_canvas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputCategory">
 
-        <!--        <TextView-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_centerInParent="true"-->
-        <!--            android:lineSpacingExtra="0sp"-->
-        <!--            android:text="@string/search"-->
-        <!--            android:textAppearance="@style/button"-->
-        <!--            android:textColor="@color/white" />-->
+
     </com.google.android.material.button.MaterialButton>
 
 

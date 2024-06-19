@@ -4,6 +4,7 @@ import com.example.scanyourbill.data.ApiService
 import com.example.scanyourbill.data.UserPreference
 import com.example.scanyourbill.data.response.CreateTransactionResponse
 import com.example.scanyourbill.data.response.HomeResponse
+import com.example.scanyourbill.data.response.SearchResponse
 import com.example.scanyourbill.data.response.TransactionResponse
 import com.example.scanyourbill.data.response.WalletResponse
 import com.example.scanyourbill.data.response.WalletResponseAll
@@ -21,6 +22,10 @@ class TransactionRepository private constructor(
         return apiService.getTransactions(startDate, endDate, byCategory, type)
     }
 
+    suspend fun search(notes: String, category: String, type: String): SearchResponse {
+        return apiService.search(notes, category, type)
+    }
+
     suspend fun getListWallet(): WalletResponseAll{
         return apiService.getWallet()
     }
@@ -31,6 +36,8 @@ class TransactionRepository private constructor(
     ): CreateTransactionResponse {
         return apiService.createTransaction(activityType, category, amount, notes, date, walletId, iconId, billId)
     }
+
+
 
     companion object {
         @Volatile

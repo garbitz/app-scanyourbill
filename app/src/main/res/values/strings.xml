@@ -75,6 +75,7 @@
     <string name="type">Select Type</string>
     <string name="income_capital_i">Income</string>
     <string name="expense_capital_e">Expense</string>
+    <string name="search_only">Search</string>
 
     <string name="salary">Salary</string>
     <string name="incoming_transfer">Incoming Transfer</string>

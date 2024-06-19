@@ -1,13 +1,19 @@
 package com.example.scanyourbill.view.search
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivitySearchBinding
+import com.example.scanyourbill.view.ViewModelFactory
 
 class SearchActivity : AppCompatActivity() {
+    private val viewModel: SearchViewModel by viewModels<SearchViewModel>{
+        ViewModelFactory.getInstance(this)
+    }
 
     private lateinit var binding: ActivitySearchBinding
 
@@ -18,9 +24,25 @@ class SearchActivity : AppCompatActivity() {
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         setupAutoCompleteInputs()
         setupInputTypeListener()
         setupInputCategoryListener()
+
+        binding.clearBtn.setOnClickListener {
+            binding.notesEditText.setText("")
+            binding.autoCompleteInputType.setText("", false)
+            binding.autoCompleteInputCategory.setText("", false)
+        }
+
+        binding.searchBtn.setOnClickListener {
+            val notes = binding.notesEditText.text.toString()
+            val category = binding.autoCompleteInputCategory.text.toString()
+            val type = binding.autoCompleteInputType.text.toString()
+            viewModel.search(notes, category, type)
+        }
+
     }
 
     private fun setupAutoCompleteInputs() {
@@ -56,12 +78,12 @@ class SearchActivity : AppCompatActivity() {
 
     private fun setupInputCategoryListener() {
         val inputCategory = binding.autoCompleteInputCategory
-        val combinedCategories = resources.getStringArray(R.array.income_categories) + resources.getStringArray(R.array.expense_categories)
         val incomeCategories = resources.getStringArray(R.array.income_categories)
         val expenseCategories = resources.getStringArray(R.array.expense_categories)
 
-        inputCategory.setOnItemClickListener { _, _, position, _ ->
-            val selectedCategory = combinedCategories[position]
+        inputCategory.setOnItemClickListener { parent, _, position, _ ->
+            val selectedCategory = parent.getItemAtPosition(position).toString()
+            Log.d("selectedCategory", selectedCategory)
             when (selectedCategory) {
                 in incomeCategories -> binding.autoCompleteInputType.setText(getString(R.string.income_capital_i), false)
                 in expenseCategories -> binding.autoCompleteInputType.setText(getString(R.string.expense_capital_e), false)

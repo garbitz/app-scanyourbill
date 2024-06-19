@@ -15,8 +15,8 @@
         <item>Food</item>
         <item>Toiletries</item>
         <item>Medical and Health Care</item>
-        <item>Others</item>
         <item>Stationery</item>
+        <item>Others</item>
     </string-array>
     <string-array name="income_categories">
         <item>Salary</item>
