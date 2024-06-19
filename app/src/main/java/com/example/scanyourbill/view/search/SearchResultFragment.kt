@@ -17,6 +17,7 @@ import com.example.scanyourbill.databinding.ItemTopSpendingBinding
 import com.example.scanyourbill.formatNumber
 import com.example.scanyourbill.view.ViewModelFactory
 import com.example.scanyourbill.view.main.MainActivity
+import com.example.scanyourbill.view.transaction.DetailActivity
 import com.example.scanyourbill.view.transaction.TransactionViewModel
 import id.derysudrajat.easyadapter.EasyAdapter
 import id.derysudrajat.easyadapter.EasyAdapterIndexed
@@ -72,9 +73,16 @@ class SearchResultFragment : Fragment() {
 
                 binding.itemNotes.text = data.notes
 
+
+
                 binding.root.setOnClickListener {
-                    val intent = Intent(requireContext(), MainActivity::class.java)
-                    startActivity(intent)
+                    viewModel.selectResult(data.date!!, data.amount!!, data.notes!!, data.category!!)
+
+                    val fragment = DetailFragment()
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentSearchDetail, fragment)
+                        .addToBackStack(null)
+                        .commit()
                 }
 
             }
