@@ -36,30 +36,30 @@ class CategoryExpenseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.clothingBtn.setOnClickListener {
-            onCategorySelected("clothing")
+            onCategorySelected("clothing", "outcome")
         }
         binding.foodBtn.setOnClickListener {
-            onCategorySelected("food")
+            onCategorySelected("food", "outcome")
         }
         binding.stationeryBtn.setOnClickListener {
-            onCategorySelected("stationery")
+            onCategorySelected("stationery", "outcome")
         }
         binding.toiletriesBtn.setOnClickListener {
-            onCategorySelected("toiletries")
+            onCategorySelected("toiletries", "outcome")
         }
         binding.medicalBtn.setOnClickListener {
-            onCategorySelected("medical")
+            onCategorySelected("medical", "outcome")
         }
         binding.entertainmentBtn.setOnClickListener {
-            onCategorySelected("entertainment")
+            onCategorySelected("entertainment", "outcome")
         }
         binding.othersBtn.setOnClickListener {
-            onCategorySelected("others")
+            onCategorySelected("others", "outcome")
         }
     }
 
-    private fun onCategorySelected(categoryId: String) {
-        (requireActivity() as TransactionActivity).handleCategorySelected(categoryId)
+    private fun onCategorySelected(categoryId: String, activityType: String) {
+        (requireActivity() as TransactionActivity).handleCategorySelected(categoryId, activityType)
         closeFragment()
     }
 

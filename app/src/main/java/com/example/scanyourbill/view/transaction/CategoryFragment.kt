@@ -74,3 +74,5 @@ class CategoryFragment : Fragment() {
 
 typealias OnCategorySelectedCallback = (String) -> Unit
 
+
+

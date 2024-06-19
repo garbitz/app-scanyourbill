@@ -1,5 +1,6 @@
 package com.example.scanyourbill.data
 
+import com.example.scanyourbill.data.response.CreateTransactionResponse
 import com.example.scanyourbill.data.response.HomeResponse
 import com.example.scanyourbill.data.response.LoginResponse
 import com.example.scanyourbill.data.response.SignupResponse
@@ -52,4 +53,17 @@ interface ApiService {
         @Field("byCategory") byCategory: Boolean,
         @Field("type") type: String
     ): TransactionResponse
+
+    @FormUrlEncoded
+    @POST("activity")
+    suspend fun createTransaction(
+        @Field("activityType") activityType: String,
+        @Field("category") category: String,
+        @Field("amount") amount: Int,
+        @Field("notes") notes: String,
+        @Field("date") date: String,
+        @Field("walletId") walletId: String,
+        @Field("iconId") iconId: Int,
+        @Field("billId") billId: Int
+    ): CreateTransactionResponse
 }
