@@ -4,9 +4,11 @@ import android.content.Context
 import android.net.Uri
 import android.util.Log
 import com.example.scanyourbill.data.ApiService
+import com.example.scanyourbill.data.SaveBillRequest
 import com.example.scanyourbill.data.UploadImageRequest
 import com.example.scanyourbill.data.UserPreference
 import com.example.scanyourbill.data.response.BillResponse
+import com.example.scanyourbill.data.response.CreateBillResponse
 import com.example.scanyourbill.data.response.WalletResponse
 import com.example.scanyourbill.data.response.WalletResponseAll
 import com.example.scanyourbill.view.scanbill.ImageUtils
@@ -23,6 +25,10 @@ class BillRepository private constructor(
         val base64Image = ImageUtils.uriToBase64(context, uri)
         val request = UploadImageRequest(images = base64Image)
         return apiService.uploadBillImage(request)
+    }
+
+    suspend fun saveBill(saveBillRequest: SaveBillRequest): CreateBillResponse {
+        return apiService.saveBill(saveBillRequest)
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.scanyourbill.data
 
 import com.example.scanyourbill.data.response.BillResponse
+import com.example.scanyourbill.data.response.CreateBillResponse
 import com.example.scanyourbill.data.response.CreateTransactionResponse
 import com.example.scanyourbill.data.response.HomeResponse
 import com.example.scanyourbill.data.response.LoginResponse
@@ -88,9 +89,19 @@ interface ApiService {
         @Field("type") type: String
     ): SearchResponse
 
+    @POST("bill/processBill")
+    suspend fun saveBill(@Body saveBillRequest: SaveBillRequest): CreateBillResponse
+
 }
 
 data class UploadImageRequest(
     @SerializedName("images")
     val images: String
+)
+
+data class SaveBillRequest(
+    @SerializedName("billId") val billId: String,
+    @SerializedName("walletId") val walletId: String,
+    @SerializedName("items") val items: Map<String, Map<String, Int>>,
+    @SerializedName("billDetails") val billDetails: Map<String, Any?>
 )
