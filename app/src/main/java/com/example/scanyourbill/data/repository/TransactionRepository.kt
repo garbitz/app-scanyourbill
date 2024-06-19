@@ -2,8 +2,12 @@ package com.example.scanyourbill.data.repository
 
 import com.example.scanyourbill.data.ApiService
 import com.example.scanyourbill.data.UserPreference
+import com.example.scanyourbill.data.response.CreateTransactionResponse
 import com.example.scanyourbill.data.response.HomeResponse
 import com.example.scanyourbill.data.response.TransactionResponse
+import com.example.scanyourbill.data.response.WalletResponse
+import com.example.scanyourbill.data.response.WalletResponseAll
+import retrofit2.http.Field
 
 class TransactionRepository private constructor(
     private val userPreference: UserPreference,
@@ -17,7 +21,16 @@ class TransactionRepository private constructor(
         return apiService.getTransactions(startDate, endDate, byCategory, type)
     }
 
+    suspend fun getListWallet(): WalletResponseAll{
+        return apiService.getWallet()
+    }
 
+    suspend fun createTransaction(
+        activityType: String, category: String, amount: Int, notes: String,
+        date: String, walletId: String, iconId: Int, billId: Int
+    ): CreateTransactionResponse {
+        return apiService.createTransaction(activityType, category, amount, notes, date, walletId, iconId, billId)
+    }
 
     companion object {
         @Volatile

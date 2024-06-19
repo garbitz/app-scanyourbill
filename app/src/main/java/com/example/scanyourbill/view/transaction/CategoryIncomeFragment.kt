@@ -40,18 +40,18 @@ class CategoryIncomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.salaryBtn.setOnClickListener {
-            onCategorySelected("salary")
+            onCategorySelected("salary", "income")
         }
         binding.incTransfer.setOnClickListener {
-            onCategorySelected("incoming_transfer")
+            onCategorySelected("incoming_transfer", "income")
         }
         binding.dividendBox.setOnClickListener {
-            onCategorySelected("dividend")
+            onCategorySelected("dividend", "income")
         }
     }
 
-    private fun onCategorySelected(categoryId: String) {
-        (requireActivity() as TransactionActivity).handleCategorySelected(categoryId)
+    private fun onCategorySelected(categoryId: String, activityType: String) {
+        (requireActivity() as TransactionActivity).handleCategorySelected(categoryId, activityType)
         closeFragment()
     }
 
