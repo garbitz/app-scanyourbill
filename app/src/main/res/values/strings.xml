@@ -91,5 +91,6 @@
     <string name="paket_telkomsel_sangat_mahal_sekali">Paket Telkomsel sangat mahal sekali</string>
     <string name="bill_scanner">Bill Scanner</string>
     <string name="total">total</string>
+    <string name="create_transaction">Create Transaction</string>
 
 </resources>

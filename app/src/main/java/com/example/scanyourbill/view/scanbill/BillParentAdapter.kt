@@ -5,20 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.scanyourbill.R
-import com.example.scanyourbill.data.response.DataItemTransaction
-import com.example.scanyourbill.view.transaction.TransactionChildAdapter
+import com.example.scanyourbill.data.response.ScannedItemsItem
 
 class BillParentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val catTextView: TextView = view.findViewById(R.id.category)
-    val dateTextView: TextView = view.findViewById(R.id.date)
-    val totalTextView: TextView = view.findViewById(R.id.total)
+//    val totalTextView: TextView = view.findViewById(R.id.total)
+//    val dateTextView: TextView = view.findViewById(R.id.date)
     val childRecyclerView: RecyclerView = view.findViewById(R.id.rvBillChild)
 }
 
-class BillParentAdapter(private var transactions: List<DataItemTransaction?>) : RecyclerView.Adapter<BillParentViewHolder>() {
+class BillParentAdapter(
+    var transactions: List<ScannedItemsItem?>,
+    private val activity: AppCompatActivity,
+    private val viewModel: BillViewModel // Use AppCompatActivity here
+) : RecyclerView.Adapter<BillParentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BillParentViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_bill_parent, parent, false)
@@ -27,23 +33,22 @@ class BillParentAdapter(private var transactions: List<DataItemTransaction?>) : 
 
     override fun onBindViewHolder(holder: BillParentViewHolder, position: Int) {
         val transaction = transactions[position]
-        Log.d("TransactionAdapter", "Binding transaction: $transaction")
+        Log.d("BillAdapter", "Binding transaction: $transaction")
 
-        holder.dateTextView.text = transaction?.date
-        holder.totalTextView.text = transaction?.rangeSummary.toString()
+        holder.catTextView.text = transaction?.category
         holder.childRecyclerView.apply {
             layoutManager = LinearLayoutManager(holder.itemView.context)
-            adapter = TransactionChildAdapter(transaction?.activities ?: listOf())
+            adapter = BillChildAdapter(transaction?.items ?: listOf(), activity.supportFragmentManager, viewModel)
         }
     }
 
     override fun getItemCount(): Int = transactions.size
 
-    // Method to update the data
-    fun updateData(newTransactions: List<DataItemTransaction?>) {
-        transactions = newTransactions
+    fun updateData(newTransactions: List<ScannedItemsItem?>?) {
+        transactions = newTransactions!!
         Log.d("TransactionAdapter", "Updating data: $newTransactions")
-
         notifyDataSetChanged()
     }
 }
+
+

@@ -47,10 +47,10 @@ data class BillDetails(
 data class BillItem(
 
 	@field:SerializedName("price")
-	val price: Int? = null,
+	var price: Int? = null,
 
 	@field:SerializedName("title")
-	val title: String? = null
+    var title: String? = null
 )
 
 data class BillData(
