@@ -102,7 +102,7 @@ class TransactionActivity : AppCompatActivity() {
     }
 
     fun handleDateSelected(year: Int, month: Int, day: Int) {
-        val selectedDate = "$year-$month-$day" // Format the date as needed
+        val selectedDate = "$year-${month+1}-$day" // Format the date as needed
         binding.date.text = selectedDate
         Log.d("TransactionActivity", "Selected date: $selectedDate")
     }

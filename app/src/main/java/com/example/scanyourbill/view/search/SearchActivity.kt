@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivitySearchBinding
 import com.example.scanyourbill.view.ViewModelFactory
+import com.example.scanyourbill.view.transaction.CategoryFragment
 
 class SearchActivity : AppCompatActivity() {
     private val viewModel: SearchViewModel by viewModels<SearchViewModel>{
@@ -39,8 +40,23 @@ class SearchActivity : AppCompatActivity() {
         binding.searchBtn.setOnClickListener {
             val notes = binding.notesEditText.text.toString()
             val category = binding.autoCompleteInputCategory.text.toString()
-            val type = binding.autoCompleteInputType.text.toString()
+            var type = binding.autoCompleteInputType.text.toString()
+
+            if(type == "Expense"){
+                type = "outcome"
+            } else if (type =="Income") {
+                type = "income"
+            } else {
+                type="all"
+            }
+
             viewModel.search(notes, category, type)
+
+            val fragment = SearchResultFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentSearchResult, fragment)
+                .addToBackStack(null)
+                .commit()
         }
 
     }
