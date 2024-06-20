@@ -8,9 +8,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivityCreateWalletBinding
+import com.example.scanyourbill.view.BaseActivity
 import com.example.scanyourbill.view.ViewModelFactory
 
-class CreateWalletActivity : AppCompatActivity() {
+class CreateWalletActivity : BaseActivity() {
     private lateinit var binding: ActivityCreateWalletBinding
     private val walletViewModel: WalletViewModel by viewModels { ViewModelFactory.getInstance(applicationContext) }
 
@@ -20,6 +21,10 @@ class CreateWalletActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupButtonClickListener()
+    }
+
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_create_wallet
     }
 
     private fun setupButtonClickListener() {

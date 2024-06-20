@@ -17,6 +17,9 @@ class TransactionThisMonthViewModel(private val repository: TransactionRepositor
     private val _isLoading = MutableLiveData<Boolean>().apply { value = false }
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _sum = MutableLiveData<Map<String, Int>>()
+    val sum: LiveData<Map<String, Int>> = _sum
+
 
     fun getTransactions(startDate: String, endDate: String, byCategory: Boolean, type: String) {
         viewModelScope.launch {
@@ -24,6 +27,7 @@ class TransactionThisMonthViewModel(private val repository: TransactionRepositor
             try {
                 val response = repository.getTransactions(startDate, endDate, byCategory, type)
                 Log.d("TransactionViewModel", "Fetched transactions: ${response.data}")
+                getSum(response)
                 _result.postValue(response)
             } catch (e: Exception) {
                 Log.e("TransactionViewModel", "Error fetching transactions", e)
@@ -32,5 +36,18 @@ class TransactionThisMonthViewModel(private val repository: TransactionRepositor
                 _isLoading.postValue(false)
             }
         }
+    }
+
+    private fun getSum(response: TransactionResponse) {
+        var sum = 0
+        var inflow = 0
+        var outflow = 0
+        response.data?.forEach {
+            sum += it?.rangeSummary!!
+            inflow += it?.income!!
+            outflow += it?.outcome!!
+        }
+        Log.d("TransactionViewModel", "Sum: $sum")
+        _sum.postValue(mapOf("sum" to sum, "inflow" to inflow, "outflow" to outflow))
     }
 }

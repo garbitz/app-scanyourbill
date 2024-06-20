@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.scanyourbill.R
 import com.example.scanyourbill.data.response.ActivitiesItem
+import com.example.scanyourbill.formatCurrency
 
 class ChildViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val categoryTextView: TextView = view.findViewById(R.id.category)
@@ -22,7 +23,7 @@ class TransactionChildAdapter(private val activities: List<ActivitiesItem?>) : R
     override fun onBindViewHolder(holder: ChildViewHolder, position: Int) {
         val activity = activities[position]
         holder.categoryTextView.text = activity?.category
-        holder.amountTextView.text = activity?.amount.toString()
+        holder.amountTextView.text =  formatCurrency("Rp", activity?.amount!!)
     }
 
     override fun getItemCount(): Int = activities.size

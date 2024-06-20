@@ -15,11 +15,12 @@ import androidx.lifecycle.Observer
 import com.example.scanyourbill.ListTransactionActivity
 import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivityTransactionBinding
+import com.example.scanyourbill.view.BaseActivity
 import com.example.scanyourbill.view.ViewModelFactory
 import com.example.scanyourbill.view.wallet.WalletActivity
 import com.example.scanyourbill.view.wallet.WalletViewModel
 
-class TransactionActivity : AppCompatActivity() {
+class TransactionActivity : BaseActivity() {
 
     private lateinit var binding: ActivityTransactionBinding
     private val viewModel: TransactionViewModel by viewModels {
@@ -75,6 +76,10 @@ class TransactionActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             createTransaction()
         }
+    }
+
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_transaction
     }
 
     private fun createTransaction() {
