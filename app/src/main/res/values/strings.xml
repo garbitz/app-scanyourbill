@@ -92,5 +92,13 @@
     <string name="bill_scanner">Bill Scanner</string>
     <string name="total">total</string>
     <string name="create_transaction">Create Transaction</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="tax">Tax</string>
+    <string name="bill_name">Bill Name</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="_2000000000">2000000000</string>
+    <string name="service_tax">Service Tax</string>
+    <string name="discount">Discount</string>
 
 </resources>

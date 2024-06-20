@@ -29,6 +29,9 @@ class BillViewModel(private val billRepository: BillRepository) : ViewModel() {
     private val _billResponse = MutableLiveData<BillResponse>()
     val billResponse: LiveData<BillResponse> get() = _billResponse
 
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> get() = _error
+
 
     fun uploadBillImage(uri: Uri, context: Context) {
         viewModelScope.launch {
@@ -37,6 +40,7 @@ class BillViewModel(private val billRepository: BillRepository) : ViewModel() {
                 _billResponse.postValue(response)
             } catch (e: Exception) {
                 Log.e("Upload Error", "uploadImage: ", e)
+                _error.postValue("Failed to upload bill image: ${e.message}")
             }
         }
     }
@@ -86,34 +90,9 @@ class BillViewModel(private val billRepository: BillRepository) : ViewModel() {
                 // Handle the response as needed
             } catch (e: Exception) {
                 // Handle the exception
+                _error.postValue("Failed to save bill: ${e.message}")
             }
         }
     }
-
-//    fun saveBill(
-//        billId: String,
-//        walletId: String,
-//        items: Map<String, Map<BillItem, Int>>,
-//        billDetails: Map<String, Any?>
-//    ) {
-//        viewModelScope.launch {
-//            try {
-//                val saveBillRequest = SaveBillRequest(
-//                    billId = billId,
-//                    walletId = walletId,
-//                    items = items,
-//                    billDetails = billDetails
-//                )
-//
-//                val response = billRepository.saveBill(saveBillRequest)
-//                // Handle the response as needed
-//            } catch (e: Exception) {
-//                // Handle the exception
-//            }
-//        }
-//    }
-
-
-
 
 }
