@@ -93,5 +93,7 @@ dependencies {
     implementation("com.github.derysudrajat:EasyAdapter:2.0.0")
     implementation("io.github.dzmitry-lakisau:month-year-picker-dialog:1.0.0")
 
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
 
 }

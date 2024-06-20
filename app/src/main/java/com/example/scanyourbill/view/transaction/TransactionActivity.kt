@@ -19,6 +19,8 @@ import com.example.scanyourbill.view.BaseActivity
 import com.example.scanyourbill.view.ViewModelFactory
 import com.example.scanyourbill.view.wallet.WalletActivity
 import com.example.scanyourbill.view.wallet.WalletViewModel
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class TransactionActivity : BaseActivity() {
 
@@ -97,6 +99,7 @@ class TransactionActivity : BaseActivity() {
 
         val intent = Intent(this, ListTransactionActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtra("date", formatDate(date))
         startActivity(intent)
     }
 
@@ -125,6 +128,13 @@ class TransactionActivity : BaseActivity() {
         // Implement your UI update logic based on categoryId
         // For example, update TextView or other UI elements
         binding.category.text = categoryId
+    }
+
+    private fun formatDate(originalDate: String): String {
+        val originalFormat = SimpleDateFormat("yyyy-M-d", Locale.getDefault())
+        val targetFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val date = originalFormat.parse(originalDate)
+        return targetFormat.format(date)
     }
 
 }

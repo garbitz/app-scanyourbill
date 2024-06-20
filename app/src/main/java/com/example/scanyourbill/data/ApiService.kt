@@ -102,6 +102,6 @@ data class UploadImageRequest(
 data class SaveBillRequest(
     @SerializedName("billId") val billId: String,
     @SerializedName("walletId") val walletId: String,
-    @SerializedName("items") val items: Map<String, Map<String, Int>>,
+    @SerializedName("items") val items: Map<String?, Map<String, Int>>,
     @SerializedName("billDetails") val billDetails: Map<String, Any?>
 )

@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.isVisible
 import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivityPinLoginBinding
@@ -26,10 +27,12 @@ class PinLoginActivity : AppCompatActivity() {
 
     private lateinit var username: String
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen() // Show the splash screen
         super.onCreate(savedInstanceState)
 
         binding = ActivityPinLoginBinding.inflate(layoutInflater)
 
+//        installSplashScreen()
         setContentView(binding.root)
 
         viewModel.getUsername().observe(this) { username ->

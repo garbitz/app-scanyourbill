@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.scanyourbill.ListTransactionActivity
 import com.example.scanyourbill.R
 import com.example.scanyourbill.view.main.MainActivity
+import com.example.scanyourbill.view.scanbill.ScanBillActivity
 import com.example.scanyourbill.view.wallet.WalletActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.time.LocalDate
@@ -36,7 +37,6 @@ abstract class BaseActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.home -> {
                     // Handle navigation_home click
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                     intent = Intent(this@BaseActivity, MainActivity::class.java)
                     startActivity(intent)
                     true
@@ -62,6 +62,8 @@ abstract class BaseActivity : AppCompatActivity() {
                 }
                 R.id.scan -> {
                     // Handle navigation_wallet click
+                    intent = Intent(this, ScanBillActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

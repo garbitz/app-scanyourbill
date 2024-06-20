@@ -24,7 +24,6 @@ object ImageUtils {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream)
             val byteArray = byteArrayOutputStream.toByteArray()
             val base64String = Base64.encodeToString(byteArray, Base64.DEFAULT)
-            Log.d("this: ", BASE64_IMAGE_PREFIX + base64String)
             return BASE64_IMAGE_PREFIX + base64String
         } catch (e: IOException) {
             // Handle exception, e.g., log or throw custom exception
