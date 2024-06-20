@@ -29,6 +29,7 @@ class ProcessedBillActivity : AppCompatActivity() {
     private val viewModel: BillViewModel by viewModels {
         ViewModelFactory.getInstance(applicationContext)
     }
+    private var walletId: String? = null // Add this line
 
     private lateinit var parentAdapter: BillParentAdapter
 
@@ -48,6 +49,7 @@ class ProcessedBillActivity : AppCompatActivity() {
 
 
         val imageUri = intent.getStringExtra("imageUri")
+        walletId = intent.getStringExtra("walletId")
         imageUri?.let {
             val uri = Uri.parse(it)
             showImage(uri)
@@ -103,7 +105,7 @@ class ProcessedBillActivity : AppCompatActivity() {
 
         return SaveBillRequest(
             billId = UUID.randomUUID().toString(),
-            walletId = "e998546a-7abe-4f32-bfd1-20b5f83faafc",
+            walletId = walletId ?: "default_wallet_id",
             items = items,
             billDetails = billDetails
         )
