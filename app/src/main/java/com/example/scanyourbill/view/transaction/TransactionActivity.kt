@@ -15,11 +15,14 @@ import androidx.lifecycle.Observer
 import com.example.scanyourbill.ListTransactionActivity
 import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivityTransactionBinding
+import com.example.scanyourbill.view.BaseActivity
 import com.example.scanyourbill.view.ViewModelFactory
 import com.example.scanyourbill.view.wallet.WalletActivity
 import com.example.scanyourbill.view.wallet.WalletViewModel
+import java.text.SimpleDateFormat
+import java.util.Locale
 
-class TransactionActivity : AppCompatActivity() {
+class TransactionActivity : BaseActivity() {
 
     private lateinit var binding: ActivityTransactionBinding
     private val viewModel: TransactionViewModel by viewModels {
@@ -77,6 +80,10 @@ class TransactionActivity : AppCompatActivity() {
         }
     }
 
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_transaction
+    }
+
     private fun createTransaction() {
         val activityType = binding.activityType.text.toString()
         val category = binding.category.text.toString()
@@ -92,6 +99,7 @@ class TransactionActivity : AppCompatActivity() {
 
         val intent = Intent(this, ListTransactionActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtra("date", formatDate(date))
         startActivity(intent)
     }
 
@@ -120,6 +128,13 @@ class TransactionActivity : AppCompatActivity() {
         // Implement your UI update logic based on categoryId
         // For example, update TextView or other UI elements
         binding.category.text = categoryId
+    }
+
+    private fun formatDate(originalDate: String): String {
+        val originalFormat = SimpleDateFormat("yyyy-M-d", Locale.getDefault())
+        val targetFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val date = originalFormat.parse(originalDate)
+        return targetFormat.format(date)
     }
 
 }

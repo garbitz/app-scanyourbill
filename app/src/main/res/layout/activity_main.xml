@@ -26,6 +26,7 @@
 
 
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -65,7 +66,7 @@
                         android:clickable="true"
                         android:focusable="true"
 
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@drawable/search_normal"
                         app:layout_constraintBottom_toTopOf="@id/layoutMonth"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -152,6 +153,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="50dp"
+                        android:textStyle="bold"
+
                         android:text="Income"
                         app:layout_constraintTop_toTopOf="@+id/imageView"
                         app:layout_constraintStart_toEndOf="@+id/pieChart" />
@@ -160,6 +163,7 @@
                         android:id="@+id/tvIncomeAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:layout_marginStart="24dp"
                         android:layout_marginBottom="140dp"
                         android:layout_marginTop="4dp"
@@ -173,7 +177,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
+
                         android:layout_marginBottom="4dp"
+                        android:textStyle="bold"
                         android:text="Expense"
                         android:layout_marginTop="20dp"
                         app:layout_constraintBottom_toTopOf="@+id/tvExpenseAmount"
@@ -186,6 +192,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="4dp"
+                        android:textStyle="bold"
                         android:layout_marginBottom="50dp"
                         android:text="Rp1.200.000"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -211,17 +218,20 @@
 
 
                 <androidx.coordinatorlayout.widget.CoordinatorLayout
+
                     android:id="@+id/mainBottomSheet"
                     style="@style/Widget.Material3.BottomSheet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/white"
+                    android:backgroundTint="@color/white"
                     android:padding="16dp"
                     app:behavior_peekHeight="320dp"
                     app:behavior_hideable="false"
                     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
                     <LinearLayout
+                        android:background="@color/white"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -229,12 +239,14 @@
 
                         <!-- Drag handle for accessibility -->
                         <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+
                             android:id="@+id/drag_handle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
                         <!-- Bottom sheet contents. -->
                         <RelativeLayout
+                            android:background="@color/white"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -243,7 +255,7 @@
                                 android:layout_marginBottom="4dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/top_spending_category"
+                                android:text="@string/top_activities"
                                 android:textFontWeight="900"/>
 
                             <TextView
@@ -319,12 +331,7 @@
                 android:layout_above="@id/bottom_navigation"
                 android:background="@drawable/upper_shadow"/>
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navigation"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_alignParentBottom="true"
-                app:menu="@menu/bottom_nav" />
+            <include layout="@layout/bottom_navigation" />
 
         </RelativeLayout>
 

@@ -1,5 +1,6 @@
 package com.example.scanyourbill.view.main
 
+import com.example.scanyourbill.view.BaseActivity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
@@ -7,11 +8,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.dzmitry_lakisau.month_year_picker_dialog.MonthYearPickerDialog
+import com.example.scanyourbill.ListTransactionActivity
 import com.example.scanyourbill.R
 import com.example.scanyourbill.data.response.TopActivitiesItem
 import com.example.scanyourbill.data.response.TopUsedWalletsItem
@@ -27,13 +28,11 @@ import com.example.scanyourbill.view.scanbill.ScanBillActivity
 import com.example.scanyourbill.view.wallet.WalletActivity
 import com.example.scanyourbill.view.transaction.TransactionActivity
 import com.example.scanyourbill.view.search.SearchActivity
-import java.text.NumberFormat
 import java.time.format.DateTimeFormatter
 import java.time.LocalDate
-import java.util.Locale
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private val viewModel by viewModels<MainViewModel>{
         ViewModelFactory.getInstance(this)
@@ -59,6 +58,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSearch.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.tvSeeAllActivity.setOnClickListener {
+            val intent = Intent(this, ListTransactionActivity::class.java)
+            intent.putExtra("date", today.toString())
             startActivity(intent)
         }
 
@@ -132,6 +137,11 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_main
+    }
+
     private fun setupTopSpendingAdapter(listTopSpending: List<TopActivitiesItem>) {
         binding.rvTopSpending.adapter = EasyAdapter(listTopSpending, ItemTopSpendingBinding::inflate) { binding, data ->
             binding.tvCategory.text = data.category

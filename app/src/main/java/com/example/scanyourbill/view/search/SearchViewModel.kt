@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.scanyourbill.data.repository.TransactionRepository
+import com.example.scanyourbill.data.response.DataItem
 import com.example.scanyourbill.data.response.ErrorResponse
 import com.example.scanyourbill.data.response.SearchResponse
 import kotlinx.coroutines.launch
@@ -16,6 +17,8 @@ class SearchViewModel(private val repository: TransactionRepository): ViewModel(
     private val _isLoading = MutableLiveData<Boolean>().apply { value = false }
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _selectedResult = MutableLiveData<DataItem>()
+    val selectedResult: LiveData<DataItem> = _selectedResult
 
     fun search(notes: String, category: String, type: String) {
         viewModelScope.launch {
@@ -36,5 +39,13 @@ class SearchViewModel(private val repository: TransactionRepository): ViewModel(
             }
         }
     }
+
+    fun selectResult(date: String, amount: Int, notes: String,  category: String) {
+        viewModelScope.launch {
+            _selectedResult.postValue(DataItem(date, amount, notes, category))
+
+        }
+    }
+
 
 }

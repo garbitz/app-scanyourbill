@@ -21,6 +21,7 @@ import com.example.scanyourbill.databinding.ActivityProcessedBillBinding
 import com.example.scanyourbill.view.ViewModelFactory
 import com.example.scanyourbill.view.main.MainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.time.LocalDate
 import java.util.UUID
 
 class ProcessedBillActivity : AppCompatActivity() {
@@ -75,6 +76,7 @@ class ProcessedBillActivity : AppCompatActivity() {
             viewModel.saveBill(saveBillRequest)
             Toast.makeText(this, "Bill has been saved!", Toast.LENGTH_LONG).show()
             val intent = Intent(this, ListTransactionActivity::class.java)
+            intent.putExtra("date", LocalDate.now().toString())
             startActivity(intent)
         }
 

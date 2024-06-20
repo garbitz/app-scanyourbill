@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,17 +15,20 @@ import com.example.scanyourbill.databinding.FragmentTransactionLastMonthBinding
 import com.example.scanyourbill.databinding.FragmentTransactionThisMonthBinding
 import com.example.scanyourbill.view.ViewModelFactory
 import com.example.scanyourbill.view.transaction.TransactionParentAdapter
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class TransactionLastMonthFragment : Fragment() {
 
     private lateinit var viewModel: TransactionThisMonthViewModel
     private lateinit var parentAdapter: TransactionParentAdapter
+    private lateinit var binding: FragmentTransactionLastMonthBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentTransactionLastMonthBinding.inflate(inflater, container, false)
+        binding = FragmentTransactionLastMonthBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -49,7 +53,32 @@ class TransactionLastMonthFragment : Fragment() {
             }
         }
 
+        viewModel.sum.observe(viewLifecycleOwner) { sum ->
+            Log.d("TransactionFragment", "Observer triggered with data: ${sum}")
+            binding.summaryVal.text = formatCurrency("Rp", sum["sum"]!!)
+            binding.inflowVal.text = formatCurrency("Rp", sum["inflow"]!!)
+            binding.outflowVal.text = formatCurrency("Rp", sum["outflow"]!!)
+
+            if (sum["sum"]!! > 0) {
+                binding.summaryVal.setTextColor(ContextCompat.getColor((requireContext()), R.color.green_income))
+            } else {
+                binding.summaryVal.setTextColor(ContextCompat.getColor((requireContext()), R.color.red_outcome))
+            }
+        }
+
+
+        val (startDate, endDate) = getCurrentMonthDates()
         // Fetch data
-        viewModel.getTransactions("2024-05-01", "2024-05-30", true, "all")
+        viewModel.getTransactions(startDate, endDate, true, "all")
+    }
+
+    private fun getCurrentMonthDates(): Pair<String, String> {
+        var currentDate = LocalDate.parse(requireActivity().intent.getStringExtra("date"))
+        currentDate = currentDate.minusMonths(1)
+
+        val startOfMonth = currentDate.withDayOfMonth(1)
+        val endOfMonth = currentDate.withDayOfMonth(currentDate.lengthOfMonth())
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        return Pair(startOfMonth.format(formatter), endOfMonth.format(formatter))
     }
 }

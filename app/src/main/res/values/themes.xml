@@ -13,4 +13,10 @@
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
+
+    <style name="Theme.ScanYourBill.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/dark_purple</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_inset</item>
+        <item name="postSplashScreenTheme">@style/Theme.ScanYourBill</item> <!-- Ensure that the main app theme is applied after the splash screen -->
+    </style>
 </resources>

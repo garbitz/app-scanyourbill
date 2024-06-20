@@ -11,9 +11,10 @@ import com.example.scanyourbill.data.ApiService
 import com.example.scanyourbill.data.UserPreference
 import com.example.scanyourbill.data.repository.WalletRepository
 import com.example.scanyourbill.databinding.ActivityWalletBinding
+import com.example.scanyourbill.view.BaseActivity
 import com.example.scanyourbill.view.ViewModelFactory
 
-class WalletActivity : AppCompatActivity() {
+class WalletActivity : BaseActivity() {
 
     private lateinit var binding: ActivityWalletBinding
 
@@ -46,5 +47,9 @@ class WalletActivity : AppCompatActivity() {
 
         // Fetch wallets
         walletViewModel.fetchWallets()
+    }
+
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_wallet
     }
 }

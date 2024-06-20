@@ -8,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.scanyourbill.R
 import com.example.scanyourbill.databinding.ActivitySearchBinding
+import com.example.scanyourbill.view.BaseActivity
 import com.example.scanyourbill.view.ViewModelFactory
 import com.example.scanyourbill.view.transaction.CategoryFragment
 
-class SearchActivity : AppCompatActivity() {
+class SearchActivity : BaseActivity() {
     private val viewModel: SearchViewModel by viewModels<SearchViewModel>{
         ViewModelFactory.getInstance(this)
     }
@@ -59,6 +60,10 @@ class SearchActivity : AppCompatActivity() {
                 .commit()
         }
 
+    }
+
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_search
     }
 
     private fun setupAutoCompleteInputs() {
