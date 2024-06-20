@@ -104,5 +104,6 @@
     <string name="ttttt">Wallet</string>
     <string name="transactiono">Transaction</string>
     <string name="homeo">Home</string>
+    <string name="create_transaction">Create Transaction</string>
 
 </resources>
