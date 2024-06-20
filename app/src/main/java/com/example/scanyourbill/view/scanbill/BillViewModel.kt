@@ -50,23 +50,44 @@ class BillViewModel(private val billRepository: BillRepository) : ViewModel() {
     }
 
     fun updateBillResponse(updatedActivities: List<BillItem?>) {
-        val currentResponse = _billResponse.value
-        val updatedScannedItems = currentResponse?.data?.scannedItems?.toMutableList() ?: mutableListOf()
+        val currentResponse = _billResponse.value ?: return
 
-        updatedActivities.forEachIndexed { index, updatedItem ->
-            val existingScannedItem = updatedScannedItems.getOrNull(index)
-            if (existingScannedItem != null) {
-                val updatedScannedItem = existingScannedItem.copy(items = updatedItem?.let { listOf(it) } ?: emptyList())
-                updatedScannedItems[index] = updatedScannedItem
+        val updatedScannedItems = currentResponse.data?.scannedItems?.map { scannedItem ->
+            val updatedItems = updatedActivities.mapNotNull { updatedItem ->
+                if (scannedItem!!.items?.any { it!!.title == updatedItem?.title } == true) {
+                    updatedItem
+                } else {
+                    null
+                }
             }
-        }
 
-        val updatedResponse = currentResponse?.copy(
+            val remainingItems = scannedItem!!.items?.filterNot { updatedItem ->
+                updatedActivities.any { it?.title == updatedItem!!.title }
+            }
+
+            val updatedItemsList = updatedItems + remainingItems.orEmpty()
+
+            scannedItem.copy(items = updatedItemsList)
+        } ?: emptyList()
+
+        val updatedResponse = currentResponse.copy(
             data = currentResponse.data?.copy(
                 scannedItems = updatedScannedItems
             )
         )
-        _billResponse.postValue(updatedResponse!!)
+
+        _billResponse.postValue(updatedResponse)
+    }
+
+    fun saveBill(saveBillRequest: SaveBillRequest) {
+        viewModelScope.launch {
+            try {
+                val response = billRepository.saveBill(saveBillRequest)
+                // Handle the response as needed
+            } catch (e: Exception) {
+                // Handle the exception
+            }
+        }
     }
 
 //    fun saveBill(
@@ -91,6 +112,8 @@ class BillViewModel(private val billRepository: BillRepository) : ViewModel() {
 //            }
 //        }
 //    }
+
+
 
 
 }

@@ -61,3 +61,10 @@ data class BillData(
 	@field:SerializedName("billDetails")
 	val billDetails: BillDetails? = null
 )
+
+fun BillItem.toPair(): Pair<String, Int> {
+	return (title.toString() to price ?: 0) as Pair<String, Int>
+}
+fun ScannedItemsItem.toItemsMap(): Map<String, Int> {
+	return items?.associate { it!!.toPair() } ?: emptyMap()
+}

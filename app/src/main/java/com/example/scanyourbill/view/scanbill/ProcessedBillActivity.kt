@@ -1,5 +1,6 @@
 package com.example.scanyourbill.view.scanbill
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +11,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.scanyourbill.ListTransactionActivity
+import com.example.scanyourbill.data.SaveBillRequest
 import com.example.scanyourbill.data.response.BillResponse
+import com.example.scanyourbill.data.response.toItemsMap
 import com.example.scanyourbill.databinding.ActivityProcessedBillBinding
 import com.example.scanyourbill.view.ViewModelFactory
 import java.util.UUID
@@ -58,6 +62,14 @@ class ProcessedBillActivity : AppCompatActivity() {
             }
         }
 
+        binding.submitBtn.setOnClickListener {
+            val billResponse = viewModel.billResponse.value ?: return@setOnClickListener
+            val saveBillRequest = convertBillResponseToSaveBillRequest(billResponse)
+            viewModel.saveBill(saveBillRequest)
+            val intent = Intent(this, ListTransactionActivity::class.java)
+            startActivity(intent)
+        }
+
 //        binding.submitBtn.setOnClickListener {
 //            val billItems = parentAdapter.transactions.flatMap { scannedItem ->
 //                scannedItem?.items ?: emptyList()
@@ -86,6 +98,32 @@ class ProcessedBillActivity : AppCompatActivity() {
 //                billDetails = billDetails
 //            )
 //        }
+    }
+
+    private fun convertBillResponseToSaveBillRequest(billResponse: BillResponse): SaveBillRequest {
+        val items = billResponse.data?.scannedItems?.map { scannedItem ->
+            scannedItem!!.toItemsMap().entries.map { (key, value) ->
+                scannedItem.category to mapOf(key to value)
+            }
+        }?.flatten()?.associate { it } ?: emptyMap()
+
+        val billDetails = billResponse.data?.billDetails?.let { billDetails ->
+            mapOf(
+                "billName" to billDetails.billName,
+                "tax" to billDetails.tax,
+                "serviceTax" to billDetails.serviceCharge,
+                "discount" to billDetails.discount,
+                "others" to billDetails.others,
+                "grandTotal" to billDetails.grandTotal
+            )
+        } ?: emptyMap()
+
+        return SaveBillRequest(
+            billId = UUID.randomUUID().toString(),
+            walletId = "e998546a-7abe-4f32-bfd1-20b5f83faafc",
+            items = items,
+            billDetails = billDetails
+        )
     }
 
     private fun showImage(uri: Uri) {
