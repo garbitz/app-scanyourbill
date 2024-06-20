@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.dzmitry_lakisau.month_year_picker_dialog.MonthYearPickerDialog
+import com.example.scanyourbill.ListTransactionActivity
 import com.example.scanyourbill.R
 import com.example.scanyourbill.data.response.TopActivitiesItem
 import com.example.scanyourbill.data.response.TopUsedWalletsItem
@@ -59,6 +60,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSearch.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.tvSeeAllActivity.setOnClickListener {
+            val intent = Intent(this, ListTransactionActivity::class.java)
+            intent.putExtra("date", today.toString())
             startActivity(intent)
         }
 

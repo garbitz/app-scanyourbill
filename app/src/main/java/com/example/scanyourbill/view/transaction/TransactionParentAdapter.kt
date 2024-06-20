@@ -1,17 +1,23 @@
 package com.example.scanyourbill.view.transaction
 
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.scanyourbill.R
 import com.example.scanyourbill.data.response.DataItemTransaction
+import com.example.scanyourbill.extractDateInfo
+import com.example.scanyourbill.formatCurrency
 
 class ParentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val dateTextView: TextView = view.findViewById(R.id.date)
+    val dateNumber: TextView = view.findViewById(R.id.date_number)
+    val dateDay: TextView = view.findViewById(R.id.date_day)
+    val dateMonthYear: TextView = view.findViewById(R.id.date_monthYear)
     val totalTextView: TextView = view.findViewById(R.id.total)
     val childRecyclerView: RecyclerView = view.findViewById(R.id.rvTransactionChild)
 }
@@ -23,12 +29,18 @@ class TransactionParentAdapter(private var transactions: List<DataItemTransactio
         return ParentViewHolder(view)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ParentViewHolder, position: Int) {
         val transaction = transactions[position]
         Log.d("TransactionAdapter", "Binding transaction: $transaction")
 
-        holder.dateTextView.text = transaction?.date
-        holder.totalTextView.text = transaction?.rangeSummary.toString()
+        val dateInfo = extractDateInfo(transaction?.date!!)
+
+
+        holder.dateNumber.text = dateInfo["dateNumber"].toString()
+        holder.dateDay.text = dateInfo["day"].toString()
+        holder.dateMonthYear.text = dateInfo["monthYear"].toString()
+        holder.totalTextView.text = formatCurrency("Rp", transaction.rangeSummary!!)
         holder.childRecyclerView.apply {
             layoutManager = LinearLayoutManager(holder.itemView.context)
             adapter = TransactionChildAdapter(transaction?.activities ?: listOf())
