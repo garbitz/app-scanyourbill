@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title=""
-        android:icon="@drawable/ic_home_selected"/>
+        android:title="@string/homeo"
+        android:icon="@drawable/home33"/>
     <item
         android:id="@+id/transaksi"
-        android:title=""
-        android:icon="@drawable/ic_transaksi_selected"/>
+        android:title="@string/transactiono"
+        android:icon="@drawable/tagihan33"/>
     <item
         android:id="@+id/scan"
         android:title=""
-        android:icon="@mipmap/ic_launcher_round"/>
+        android:icon="@drawable/qris"/>
     <item
-        android:id="@+id/budget"
-        android:title=""
-        android:icon="@drawable/ic_budget"/>
+        android:id="@+id/wallet"
+        android:title="@string/ttttt"
+        android:icon="@drawable/tagihan_3"/>
     <item
         android:id="@+id/account"
-        android:title=""
-        android:icon="@drawable/ic_akun"/>
+        android:title="@string/accountt"
+        android:icon="@drawable/akun_2"/>
 </menu>

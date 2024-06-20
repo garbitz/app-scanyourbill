@@ -5,20 +5,18 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.scanyourbill.databinding.ActivityListTransactionBinding
-import com.example.scanyourbill.databinding.ActivityLoginBinding
+import com.example.scanyourbill.view.BaseActivity
 import com.example.scanyourbill.view.main.MainActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import java.time.LocalDate
 
-class ListTransactionActivity : AppCompatActivity() {
+class ListTransactionActivity : BaseActivity() {
     companion object {
-        @StringRes
+
         // Define a mutable list of tab titles
         private var TAB_TITLES = mutableListOf<String>()
 
@@ -35,27 +33,10 @@ class ListTransactionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityListTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bottomNavigationView.menu.findItem(R.id.transaksi)?.isChecked = true
 
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.home -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.transaksi -> {
-                    true
-                }
-
-                else -> false
-            }
-        }
 
         val today = intent.getStringExtra("date") ?: LocalDate.now().toString()
         val dateInfo = getMonthDetails(today)
@@ -81,6 +62,10 @@ class ListTransactionActivity : AppCompatActivity() {
 
         viewPager.setCurrentItem(1, true)
         supportActionBar?.elevation = 0f
+    }
+
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_list_transaction
     }
 
     private fun updateTabTitles(newTitles: List<String>) {

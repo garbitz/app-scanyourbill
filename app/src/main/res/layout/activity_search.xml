@@ -123,7 +123,7 @@
         android:background="@drawable/grey_btn"
         android:text="@string/clear"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputCategory"></com.google.android.material.button.MaterialButton>
+        app:layout_constraintTop_toBottomOf="@+id/inputCategory"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/search_btn"
@@ -148,6 +148,8 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <include layout="@layout/bottom_navigation" />
 
 
 
