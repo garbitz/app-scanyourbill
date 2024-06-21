@@ -3,7 +3,20 @@
     <style name="Base.Theme.ScanYourBill" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:fontFamily">@font/manrope</item>
     </style>
 
     <style name="Theme.ScanYourBill" parent="Base.Theme.ScanYourBill" />
+
+    <style name="ThemeOverlay.ScanYourBill.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
+
+    <style name="Theme.ScanYourBill.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/dark_purple</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_inset</item>
+        <item name="postSplashScreenTheme">@style/Theme.ScanYourBill</item> <!-- Ensure that the main app theme is applied after the splash screen -->
+    </style>
 </resources>
